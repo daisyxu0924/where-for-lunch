@@ -16,14 +16,21 @@ class HomePage extends Component {
   handleOnConditionChange = (value) => {
     this.props.setRadius(value);
   }
+
+  isLatLngLoaded = () => {
+    const { latitude, longitude } = this.props.condition;
+    return latitude && longitude;
+  }
+
   render() {
     const { condition, place } = this.props;
+
     return (
       <div className="homePageWrapper">
         <Place place={place} />
         <div className="searchWrapper">
           <Condition condition={condition} action={this.handleOnConditionChange}/>
-          <Button onClick={this.handleOnClick} theme="homepageClick" />
+          <Button onClick={this.handleOnClick} theme="homepageClick" isDisabled={!this.isLatLngLoaded()} />
         </div>
       </div>
     );
