@@ -7,6 +7,7 @@ import placeActions from 'actions/placeActions';
 import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
 import Condition from 'components/Condition/Condition';
+import { hasLatLng } from 'lib/utils';
 
 class HomePage extends Component {
   handleOnClick = () => {
@@ -17,20 +18,14 @@ class HomePage extends Component {
     this.props.setRadius(value);
   }
 
-  isLatLngLoaded = () => {
-    const { latitude, longitude } = this.props.condition;
-    return latitude && longitude;
-  }
-
   render() {
     const { condition, place } = this.props;
-
     return (
       <div className="homePageWrapper">
         <Place place={place} />
         <div className="searchWrapper">
           <Condition condition={condition} action={this.handleOnConditionChange}/>
-          <Button onClick={this.handleOnClick} theme="homepageClick" isDisabled={!this.isLatLngLoaded()} />
+          <Button onClick={this.handleOnClick} theme="homepageClick" isDisabled={!hasLatLng(condition)} />
         </div>
       </div>
     );
