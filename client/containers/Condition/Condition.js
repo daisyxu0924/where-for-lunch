@@ -47,11 +47,13 @@ class Condition extends Component {
         <div className={styles.filters}>
           {Object.keys(this.choices).map(item => (
             <div key={item}>
-              <Checkbox
-                onChangeAction={this.handleOnChangeAction}
-                name={item}
-                defaultChecked={isCategoryChecked(categories, item)} />
-              <label>{this.choices[item]}</label>
+              <label>
+                <Checkbox
+                  onChangeAction={this.handleOnChangeAction}
+                  name={item}
+                  defaultChecked={isCategoryChecked(categories, item)} />
+                {this.choices[item]}
+              </label>
             </div>
           ))}
         </div>

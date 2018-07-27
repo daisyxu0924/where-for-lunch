@@ -7,5 +7,10 @@
     > div {
       display: flex;
     }
-  }
+
+    label {
+      display: flex;
+      cursor: pointer;
+    }
+  }  
 }

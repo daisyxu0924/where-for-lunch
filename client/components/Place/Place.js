@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Place.css';
 
 const Place = ({ place }) => {
-  console.log(place);
   return (
     <div className={styles.root}>
       <div className={styles.name}>{ place.name || 'Where for lunch?' }</div>
