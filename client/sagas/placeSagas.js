@@ -1,6 +1,6 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
 import { getPlaceIds } from 'services/placeApi';
-import { getRandom } from 'lib/utils';
+import { getRandom, formatCategories } from 'lib/utils';
 import placeActions from 'actions/placeActions';
 import {
   FETCH_PLACES,
@@ -8,9 +8,18 @@ import {
 
 function* fetchPlace(action) {
   try {
-    const places = yield call(getPlaceIds, action.payload);
-    const randomPlace = getRandom(places);
-    yield put(placeActions.setDetails(randomPlace));
+    const params = {
+      ...action.payload,
+      categories: formatCategories(action.payload.categories),
+    };
+    const places = yield call(getPlaceIds, params);
+
+    if (places.length) {
+      const randomPlace = getRandom(places);
+      yield put(placeActions.setDetails(randomPlace));
+    } else {
+      yield put(placeActions.clearDetails());
+    }
   } catch (e) {
     console.log('error! ', e);
   }

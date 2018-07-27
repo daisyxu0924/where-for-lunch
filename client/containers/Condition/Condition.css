@@ -1,0 +1,11 @@
+.root {
+  > span, > div {
+    display: inline;
+  }
+
+  .filters {
+    > div {
+      display: flex;
+    }
+  }
+}
