@@ -8,9 +8,11 @@ axios.defaults.headers.common = {
 };
 
 export const getPlaceIds = (params) => {
-  return axios.get(`${PLACES_API_PATH}/`, {
-    params,
-  }).then(({ data }) => data);
+  return axios
+    .get(`${PLACES_API_PATH}/`, {
+      params,
+    })
+    .then(({ data }) => data);
 };
 
 export const getPlaceDetails = (id) => {
