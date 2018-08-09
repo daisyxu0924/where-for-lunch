@@ -8,7 +8,7 @@ import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
 import Condition from 'components/Condition/Condition';
 
-class HomePage extends Component {
+export class HomePage extends Component {
   handleOnClick = () => {
     this.props.fetchPlaces(this.props.condition);
   }
