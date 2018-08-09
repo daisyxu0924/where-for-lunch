@@ -1,4 +1,8 @@
 .root {
+  > span {
+    margin: 0 5px;
+  }
+  
   > span, > div {
     display: inline;
   }
