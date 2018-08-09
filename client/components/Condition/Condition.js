@@ -17,8 +17,8 @@ export default class Condition extends PureComponent {
     const { condition: { radius } } = this.props;
     return (
       <div className={styles.root}>
-        <span>radius:</span>
-        <Input defaultValue={radius} onBlurAction={this.handleOnBlurAction}></Input>
+        <span>Radius:</span>
+        <Input defaultValue={radius} onBlurAction={this.handleOnBlurAction}/>
         <span>meters</span>
       </div>
     );
