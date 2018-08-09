@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -7,7 +7,7 @@ import Condition from 'components/Condition/Condition';
 import conditionActions from 'actions/conditionActions';
 import placeActions from 'actions/placeActions';
 
-class Search extends React.Component {
+export class Search extends PureComponent {
   static propTypes = {
     condition: PropTypes.object,
     place: PropTypes.object,
