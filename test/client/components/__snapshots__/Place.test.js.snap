@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`With Jest snapshot, Place component renders rating section when present 1`] = `
+exports[`Place component With Jest snapshot, renders rating section when present 1`] = `
 <div
   className="root"
 >
