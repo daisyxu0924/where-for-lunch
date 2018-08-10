@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Container renders properly 1`] = `
+<form
+  className="searchWrapper"
+  onSubmit={[Function]}
+>
+  <div
+    className="root"
+  >
+    <span>
+      Radius:
+    </span>
+    <div
+      className="root"
+    >
+      <input
+        onBlur={[Function]}
+        type="text"
+      />
+    </div>
+    <span>
+      meters
+    </span>
+  </div>
+  <button
+    className="root homepageClick"
+  />
+</form>
+`;

@@ -1,22 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import { Search } from 'containers/Search';
 
 describe('Search Container', () => {
   const mockFn = jest.fn();
-  const props = {
+  const defaultProps = {
     condition: {},
     setRadius: mockFn,
     fetchPlaces: mockFn,
   };
-
-  const wrapper = shallow(
-    <Search {...props}/>,
-  );
+  const searchComponent = props =>
+    <Search {...{ ...defaultProps, ...props }}/>;
 
   test('renders properly', () => {
-    expect(wrapper.find('form').children().length).toBe(2);
-    expect(wrapper.find('Condition').length).toBe(1);
-    expect(wrapper.find('Button').length).toBe(1);
+    const wrapper = renderer
+      .create(searchComponent())
+      .toJSON();
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
