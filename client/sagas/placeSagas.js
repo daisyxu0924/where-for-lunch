@@ -3,7 +3,7 @@ import { getPlaceIds } from 'services/placeApi';
 import { getRandom } from 'lib/utils';
 import placeActions from 'actions/placeActions';
 import {
-  FETCH_PLACES,
+  FETCH_PLACES, FETCH_PLACE_DETAILS
 } from 'actions/placeActionTypes';
 
 function* fetchPlace(action) {

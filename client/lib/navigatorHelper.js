@@ -9,6 +9,6 @@ export function fetchLatLng(store) {
       payload: position.coords,
     });
   }, (err) => {
-    console.log('give it to me! ', err);
+    console.log('gives it to me! ', err);
   });
 }

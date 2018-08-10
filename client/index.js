@@ -10,14 +10,17 @@ import rootReducer from 'reducers';
 import sagas from 'sagas';
 import App from 'containers/App';
 import HomePage from 'containers/HomePage';
+import PlaceDetails from 'containers/PlaceDetails/PlaceDetails';
 import { fetchLatLng } from 'lib/navigatorHelper';
+// Logger with default options
+import logger from 'redux-logger';
 import 'index.css';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(sagaMiddleware)),
+  composeEnhancers(applyMiddleware(sagaMiddleware, logger)),
 );
 
 sagaMiddleware.run(sagas);
@@ -31,6 +34,7 @@ render(
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={ HomePage } />
+          <Route path="/place-details/:id" component={ PlaceDetails } />
         </Switch>
       </Router>
     </App>

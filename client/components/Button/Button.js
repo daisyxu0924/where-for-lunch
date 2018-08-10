@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Button.css';
 
-const Button = ({ onClick, children, theme }) => {
+const Button = ({ onClick, theme, btnStatus }) => {
   return (
     <button
       className={classNames({
         [styles.root]: true,
         [styles[theme]]: true,
+        [styles.colorNotActive]: btnStatus,
       })}
       onClick={onClick}
+      disabled={ btnStatus }
     >
-      { children }
     </button>
   );
 };
@@ -23,6 +24,7 @@ Button.propTypes = {
   ]),
   onClick: PropTypes.func,
   theme: PropTypes.string,
+  btnStatus: PropTypes.bool,
 };
 
 export default Button;

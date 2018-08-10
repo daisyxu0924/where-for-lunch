@@ -13,4 +13,7 @@
     margin-left: calc($base-spacing * 2);
     box-shadow: $button-shadow;
   }
+  &.colorNotActive {
+    background-color: $grey;
+  }
 }

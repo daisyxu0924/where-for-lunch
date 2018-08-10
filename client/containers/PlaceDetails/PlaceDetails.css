@@ -15,16 +15,11 @@
   padding: calc($base-spacing * 2);
   > div {
     margin-bottom: calc($base-spacing / 2);
-    > a {
-      color: $black;
-      cursor: pointer;
-    }
-    > a:hover {
-      color: $blue;
-      cursor: pointer;
-    }
   }
-
+  img {
+    width: 100%;
+    display: block;
+  }
   .rating {
     margin-top: $base-spacing;
     position: realtive;
