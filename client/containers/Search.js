@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Button from 'components/Button/Button';
 import Condition from 'components/Condition/Condition';
+import PriceOptions from 'components/PriceOptions/PriceOptions';
 import conditionActions from 'actions/conditionActions';
 import placeActions from 'actions/placeActions';
 
@@ -31,6 +32,7 @@ export class Search extends PureComponent {
 
     return (
       <form className="searchWrapper" onSubmit={this.handleOnFormSubmit}>
+        <PriceOptions/>
         <Condition condition={condition} action={this.handleOnConditionChange}/>
         <Button theme="homepageClick" disabled={disableBtn} />
       </form>
