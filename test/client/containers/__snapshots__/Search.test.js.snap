@@ -5,6 +5,9 @@ exports[`Search Container renders properly 1`] = `
   className="searchWrapper"
   onSubmit={[Function]}
 >
+  <div>
+    PriceOptions
+  </div>
   <div
     className="root"
   >
