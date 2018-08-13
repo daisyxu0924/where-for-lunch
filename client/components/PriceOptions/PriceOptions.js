@@ -1,24 +1,6 @@
 import React from 'react';
 import LabelCheckbox from 'components/LabelCheckbox/LabelCheckbox';
-
-const priceOptionsData = [
-  {
-    value: 1,
-    label: '$',
-  },
-  {
-    value: 2,
-    label: '$$',
-  },
-  {
-    value: 3,
-    label: '$$$',
-  },
-  {
-    value: 4,
-    label: '$$$$',
-  },
-];
+import { priceOptionsData } from 'constants/PriceOptions';
 
 const PriceOptions = () => {
   return (
