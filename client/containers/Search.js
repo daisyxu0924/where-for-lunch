@@ -30,7 +30,10 @@ export class Search extends PureComponent {
   handleOnFormSubmit = (e) => {
     e.preventDefault();
 
-    this.props.fetchPlaces(this.props.condition);
+    this.props.fetchPlaces({
+      ...this.props.condition,
+      price: this.props.priceOptions.selected.toString(),
+    });
   };
 
   render() {
