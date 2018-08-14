@@ -18,4 +18,8 @@
   &:disabled {
     background-color: $starGrey;
   }
+  
+  &:disabled {
+    background-color: $starGrey;
+  }
 }

@@ -78,6 +78,7 @@ exports[`Search Container renders properly 1`] = `
   </div>
   <button
     className="root homepageClick"
+    disabled={true}
   />
 </form>
 `;

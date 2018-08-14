@@ -6,6 +6,7 @@ describe('LabelCheckbox Component', () => {
   const defaultProps = {
     label: 'test label',
     name: 'test name',
+    onClick: jest.fn(),
     value: 'test value',
   };
 

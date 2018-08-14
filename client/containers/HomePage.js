@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Place from 'components/Place/Place';
 import Search from 'containers/Search';
 
-export class HomePage extends Component {
+export class HomePage extends PureComponent {
   static propTypes = {
     place: PropTypes.object,
   };
