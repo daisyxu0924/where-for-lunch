@@ -17,29 +17,33 @@ exports[`Place component With Jest snapshot, renders rating section when present
     <div />
     <div />
     <div
-      className="rating"
+      className="ratingScore"
+    >
+       reviews
+    </div>
+    <span
+      className="root"
     >
       <div
-        className="ratingScore"
-      >
-         reviews
-      </div>
-      <div
-        className="stars"
+        className="rating"
       >
         <div
-          className="emptyStars"
-        />
-        <div
-          className="fullStars"
-          style={
-            Object {
-              "width": "70%",
+          className="stars"
+        >
+          <div
+            className="emptyStars"
+          />
+          <div
+            className="fullStars"
+            style={
+              Object {
+                "width": "70%",
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
-    </div>
+    </span>
   </div>
 </div>
 `;
