@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`With Jest snapshot, Place component renders rating section when present 1`] = `
+exports[`Place Component With Jest snapshot, renders rating section when present 1`] = `
 <div
   className="root"
 >
   <div
     className="name"
-  />
+  >
+    Where for lunch?
+  </div>
   <div
     className="box"
   >
@@ -15,29 +17,33 @@ exports[`With Jest snapshot, Place component renders rating section when present
     <div />
     <div />
     <div
-      className="rating"
+      className="ratingScore"
+    >
+       reviews
+    </div>
+    <span
+      className="root"
     >
       <div
-        className="ratingScore"
-      >
-         reviews
-      </div>
-      <div
-        className="stars"
+        className="rating"
       >
         <div
-          className="emptyStars"
-        />
-        <div
-          className="fullStars"
-          style={
-            Object {
-              "width": "70%",
+          className="stars"
+        >
+          <div
+            className="emptyStars"
+          />
+          <div
+            className="fullStars"
+            style={
+              Object {
+                "width": "70%",
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
-    </div>
+    </span>
   </div>
 </div>
 `;

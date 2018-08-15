@@ -4,6 +4,6 @@ import placeSagas from './placeSagas';
 
 export default function* rootSagas() {
   yield all([
-    placeSagas(),
+    ...placeSagas,
   ]);
 }

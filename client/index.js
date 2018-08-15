@@ -31,6 +31,7 @@ render(
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={ HomePage } />
+          <Route path="/details/:placeid" component={ HomePage } />
         </Switch>
       </Router>
     </App>

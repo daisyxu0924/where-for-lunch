@@ -1,53 +1,39 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Button from 'components/Button/Button';
-import placeActions from 'actions/placeActions';
-import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
-import Condition from 'components/Condition/Condition';
+import PlaceLink from 'components/PlaceLink/PlaceLink';
+import Search from 'containers/Search';
+import Details from 'containers/Details';
 
-class HomePage extends Component {
-  handleOnClick = () => {
-    this.props.fetchPlaces(this.props.condition);
-  }
+export class HomePage extends PureComponent {
+  static propTypes = {
+    place: PropTypes.object,
+    match: PropTypes.object,
+  };
 
-  handleOnConditionChange = (value) => {
-    this.props.setRadius(value);
-  }
   render() {
-    const { condition, place } = this.props;
+    const { place } = this.props;
+    const PlaceComponent = place.id ?
+      <PlaceLink place={place} /> :
+      <Place place={place} />;
+
     return (
       <div className="homePageWrapper">
-        <Place place={place} />
-        <div className="searchWrapper">
-          <Condition condition={condition} action={this.handleOnConditionChange}/>
-          <Button onClick={this.handleOnClick} theme="homepageClick" />
-        </div>
+        <Route path="/" exact component={ () => PlaceComponent } />
+        <Route path="/" exact component={ Search } />
+
+        <Route path="/details/:placeid" exact component={Details} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  condition: state.condition,
   place: state.place,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    fetchPlaces: placeActions.fetchPlaces,
-    setRadius: conditionActions.setRadius,
-  }, dispatch);
-
-HomePage.propTypes = {
-  condition: PropTypes.object,
-  place: PropTypes.object,
-  fetchPlaces: PropTypes.func,
-  setRadius: PropTypes.func,
-};
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(HomePage);
