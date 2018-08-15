@@ -1,5 +1,12 @@
 @import 'styles/variables.css';
 
+.clickable {
+  cursor: pointer;
+
+  &:hover > div:first-child {
+    font-weight: bold;
+  }
+}
 .name {
   margin-top: calc($base-spacing * 10);
   min-height: 2rem;
