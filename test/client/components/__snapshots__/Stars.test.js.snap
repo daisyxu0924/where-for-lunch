@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stars Component renders properly 1`] = `
+<span
+  className="root"
+>
+  <div
+    className="rating"
+  >
+    <div
+      className="stars"
+    >
+      <div
+        className="emptyStars"
+      />
+      <div
+        className="fullStars"
+        style={
+          Object {
+            "width": "80%",
+          }
+        }
+      />
+    </div>
+  </div>
+</span>
+`;

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Place from 'client/components/Place/Place';
 import renderer from 'react-test-renderer';
 
-describe('Place component', () => {
+describe('Place Component', () => {
   test('With Enzyme, doest not render rating section when no rating passed over', () => {
     const place = { hehe: 'haha' };
     const wrapper = shallow(
