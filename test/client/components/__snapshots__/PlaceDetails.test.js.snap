@@ -34,7 +34,7 @@ exports[`PlaceDetails Component renders properly 1`] = `
               className="fullStars"
               style={
                 Object {
-                  "width": "40%",
+                  "width": "100%",
                 }
               }
             />
