@@ -1,9 +1,20 @@
 .root {
-  > span {
+  display: flex;
+}
+
+.radius {
+  & > span {
     margin: 0 5px;
   }
   
-  > span, > div {
+  & > span, & > div {
     display: inline;
   }
+}
+
+.priceOptions {
+ & > p {
+   display: inline-block;
+   margin: 0 10px 0 0;
+ }
 }
