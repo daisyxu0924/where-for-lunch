@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import placeActions from 'actions/placeActions';
 import PlaceDetails from 'components/PlaceDetails/PlaceDetails';
 
-class Details extends PureComponent {
+export class Details extends PureComponent {
   static defaultProps = {
     place: {},
   };
@@ -30,7 +30,7 @@ class Details extends PureComponent {
   render() {
     if (this.props.loading) {
       return (
-        <div>Loading...</div>
+        <span>Loading...</span>
       );
     }
 
