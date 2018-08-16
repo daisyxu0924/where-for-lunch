@@ -46,6 +46,7 @@
   align-items: center;
   background: #000;
   flex: 30%;
+  height: 100%;
   width: 200px;
 
   & img {

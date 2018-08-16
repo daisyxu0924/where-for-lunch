@@ -26,6 +26,14 @@ exports[`Search Container renders properly 1`] = `
       <p>
         Address: 
       </p>
+      <div
+        className="root"
+      >
+        <div
+          hidden={true}
+          id="map"
+        />
+      </div>
     </div>
   </div>
 </section>

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Stars from 'components/Stars/Stars';
 import Slider from 'react-slick';
+import Stars from 'components/Stars/Stars';
+import Map from 'components/Map/Map';
 import classNames from 'classnames/bind';
 import styles from './PlaceDetails.css';
 
@@ -63,11 +64,6 @@ class PlaceDetails extends PureComponent {
 
         <div className={styles.row}>
           <div className={styles.contactDetails}>
-            <p>
-              Address:&nbsp;
-              { place.location && place.location.display_address.join(', ') }
-            </p>
-
             {
               place.display_phone && (
                 <p>
@@ -78,6 +74,13 @@ class PlaceDetails extends PureComponent {
                 </p>
               )
             }
+
+            <p>
+              Address:&nbsp;
+              { place.location && place.location.display_address.join(', ') }
+            </p>
+
+            <Map coordinates={place.coordinates}/>
           </div>
 
           {
