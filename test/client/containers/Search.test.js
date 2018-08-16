@@ -12,7 +12,6 @@ describe('Search Container', () => {
     setRadius: mockFn,
     setPrices: mockFn,
     fetchPlaces: mockFn,
-    priceOptions: { selected: [] },
   };
   const searchComponent = props =>
     <Search {...{ ...defaultProps, ...props }}/>;
