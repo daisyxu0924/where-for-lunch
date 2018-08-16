@@ -6,7 +6,9 @@ import { Search } from 'containers/Search';
 describe('Search Container', () => {
   const mockFn = jest.fn();
   const defaultProps = {
-    condition: {},
+    condition: {
+      prices: [],
+    },
     setRadius: mockFn,
     setPrices: mockFn,
     fetchPlaces: mockFn,
@@ -16,11 +18,6 @@ describe('Search Container', () => {
     <Search {...{ ...defaultProps, ...props }}/>;
 
   const shallowWrapper = shallow(searchComponent());
-
-  test('it always renders `PriceOption`', () => {
-    const priceOptions = shallowWrapper.find('PriceOptions');
-    expect(priceOptions.length).toBe(1);
-  });
 
   test('it always renders `Condition`', () => {
     const condition = shallowWrapper.find('Condition');
