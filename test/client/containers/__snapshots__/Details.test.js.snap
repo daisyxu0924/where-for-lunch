@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Container renders properly 1`] = `
+<section
+  className="root"
+>
+  <header
+    className="header"
+  >
+    <h1>
+      <span
+        className="badge green"
+      >
+        OPEN
+      </span>
+    </h1>
+    <span />
+    <p />
+  </header>
+  <div
+    className="row"
+  >
+    <div
+      className="contactDetails"
+    >
+      <p>
+        Address: 
+      </p>
+    </div>
+  </div>
+</section>
+`;
