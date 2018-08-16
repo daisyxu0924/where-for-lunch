@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     js: ['babel-polyfill', './index.js'],
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'cheap-module-eval-source-map',
   resolve: {
     extensions: ['.js'],
     modules: [rootPath, 'node_modules'],
