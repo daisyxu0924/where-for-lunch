@@ -21,27 +21,7 @@
     position: realtive;
     display: inline;
   }
-  .ratingScore, .stars {
-    display: inline;
-  }
-  .stars {
-    position: relative;
-    vertical-align: middle;
+  .ratingScore {
     display: inline-block;
-    color: $starGrey;
-    overflow: hidden;
-    margin-left: calc($base-spacing / 2);
-  }
-  .fullStars {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: $starYellow;
-  }
-  .emptyStars:before, .fullStars:before {
-    content:'\2605\2605\2605\2605\2605';
-    font-size: 1rem;
   }
 }

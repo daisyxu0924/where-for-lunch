@@ -1,0 +1,61 @@
+.root {
+  background: rgba(39, 38, 38, 0.67);
+  padding: 20px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.header {
+  & h1 > .badge {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 6px;
+
+    &.red {
+      background: #ad0000;
+    }
+
+    &.green {
+      background: #008000;
+    }
+
+    &.blue {
+      background: #1c27ea;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contactDetails {
+  flex: 70%;
+
+  & p > a {
+    color: #ffeb3b;
+    font-weight: bold;
+  }
+}
+
+.photos {
+  align-items: center;
+  background: #000;
+  flex: 30%;
+  height: 100%;
+  width: 200px;
+
+  & img {
+    width: 100%;
+  }
+
+  & > span {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+  }
+}

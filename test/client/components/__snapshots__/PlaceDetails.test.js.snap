@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceDetails Component renders properly 1`] = `
+<section
+  className="root"
+>
+  <header
+    className="header"
+  >
+    <h1>
+      <span
+        className="badge green"
+      >
+        OPEN
+      </span>
+    </h1>
+    <div>
+      <span>
+         reviews
+      </span>
+      <span
+        className="root"
+      >
+        <div
+          className="rating"
+        >
+          <div
+            className="stars"
+          >
+            <div
+              className="emptyStars"
+            />
+            <div
+              className="fullStars"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </span>
+    </div>
+    <span />
+    <p />
+  </header>
+  <div
+    className="row"
+  >
+    <div
+      className="contactDetails"
+    >
+      <p>
+        Address: 
+      </p>
+      <div
+        className="root"
+      >
+        <div
+          hidden={true}
+          id="map"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

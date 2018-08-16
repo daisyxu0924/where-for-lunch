@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map Component renders properly 1`] = `
+<div
+  className="root"
+>
+  <div
+    hidden={false}
+    id="map"
+  />
+</div>
+`;
