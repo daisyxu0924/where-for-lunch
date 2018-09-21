@@ -7,8 +7,9 @@ $desktop:                 80rem;
 $big-desktop:             90rem;
 $green:                   #32b699;
 $black:                   #0C090A;
+$grey:                    #b1b1b1;
 $starYellow:              #fde16d;
-$starGrey:                #b1b1b1;
+$starGrey:                $grey;
 
 $button-shadow-x:         0;
 $button-shadow-y:         0.03125em;
