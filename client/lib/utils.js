@@ -3,3 +3,8 @@ export function getRandom(list) {
   const rand = list[Math.floor(Math.random() * list.length)];
   return rand;
 }
+
+export function hasLatLng(obj) {
+  const { latitude, longitude } = obj;
+  return !isNaN(latitude) && !isNaN(longitude);
+}
