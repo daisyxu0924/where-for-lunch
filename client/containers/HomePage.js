@@ -7,7 +7,7 @@ import placeActions from 'actions/placeActions';
 import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
 import Condition from 'components/Condition/Condition';
-import { isNull } from 'util';
+import { isEmpty } from '../lib/utils';
 
 class HomePage extends Component {
   handleOnClick = () => {
@@ -17,9 +17,10 @@ class HomePage extends Component {
   handleOnConditionChange = (value) => {
     this.props.setRadius(value);
   }
+
   render() {
     const { condition, place } = this.props;
-    const findPalceDisabled = isNull(condition.latitude);
+    const findPalceDisabled = isEmpty(condition.latitude);
     return (
       <div className="homePageWrapper">
         <Place place={place} />
@@ -54,6 +55,7 @@ HomePage.propTypes = {
   fetchPlaces: PropTypes.func,
   setRadius: PropTypes.func,
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
