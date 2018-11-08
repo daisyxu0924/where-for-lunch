@@ -9,7 +9,6 @@ const Button = ({ onClick, children, theme, disabled }) => {
       className={classNames({
         [styles.root]: true,
         [styles[theme]]: true,
-        [styles[`${theme}Disabled`]]: disabled,
       })}
       onClick={onClick}
       disabled={disabled}
