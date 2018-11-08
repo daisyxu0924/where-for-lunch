@@ -5,7 +5,7 @@ const nested = require('postcss-nested');
 const plugins = [
   nested,
   importer({
-    path: ['./client', './node_modules'],
+    path: ['./src', './node_modules'],
   }),
   advancedVariables,
 ];

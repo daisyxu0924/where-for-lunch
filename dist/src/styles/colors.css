@@ -1,0 +1,77 @@
+$light-greyish-blue:    #F7FAFB;
+$blue:                  #00AAE5;
+$light-blue:            #3EBCF1;
+$dark-blue:             color($blue shade(10%));
+$darker-blue:           #006FA8;
+$green:                 #55b724;
+$dark-green:            color($green shade(40%));
+$light-green:           #00A186;
+$light-sea-green:       color(lightseagreen shade(15%));
+$lightest-green:        #E5F5F2;
+
+$purple:                #6d2077;
+$dark-purple:           color($purple shade(40%));
+
+$red:                   var(--red);
+$dark-red:              #b75944;
+
+$orange:                #ee882a;
+$dark-orange:           color($orange shade(40%));
+
+$blurry-yellow:         #f3f2e6;
+$yellow:                #deaf2f;
+$dark-yellow:           color(#deaf2f shade(40%));
+
+$off-white:             #fcfcfc;
+$blueish-grey:          #e1ebf1;
+$lightest-grey:         #f0f5f8;
+$lighter-grey:          #e8e8e8;
+$light-grey:            #c0ced7;
+$slight-light-grey:     #c5c5c5;
+$medium-grey:           var(--mediumGrey);
+$dark-grey:             var(--darkGrey);
+$dark-blueish-grey:     #575f63;
+$darker-grey:           #4a4a4a;
+
+$disabled-grey:         #cdd9e0;
+
+$light-grey-label:      #7f92a0;
+
+$grey:                  $medium-grey;
+
+$white-tint-gradient:   linear-gradient(0deg, color(white a(0%)) -100%, color(white a(25%)) 100%);
+
+$niagara-green:         #17A086;
+$beige:                 #f5f5eb;
+$success-color:         $green;
+$info-color:            $purple;
+$error-color:           $red;
+$warning-color:         $orange;
+$caution-color:         $yellow;
+
+$base-background:       $lightest-grey;
+$base-color:            $dark-grey;
+$base-border-color:     $light-grey;
+
+$footer-background:     $lightest-grey;
+
+$secondary-color:       $medium-grey;
+
+$form-border-color:      $base-border-color;
+$form-background:        white;
+$form-hint-color:        $secondary-color;
+$form-placeholder:       $medium-grey;
+
+$button-background-gradient:       $white-tint-gradient;
+$standard-button-background-color: $off-white;
+
+$button-shadow-x:         0;
+$button-shadow-y:         0.03125em;
+$button-shadow-blur:      0.0625em;
+$button-shadow-spread:    0;
+$button-shadow-color:     color(black a(15%));
+$button-shadow:           $button-shadow-x $button-shadow-y $button-shadow-blur $button-shadow-spread $button-shadow-color;
+$tooltip-background-color:#333333;
+
+$semi-transparent-white: rgba(255, 255, 255, 0.5);
+$semi-transparent-blue: rgba(0, 170, 229, 0.8);

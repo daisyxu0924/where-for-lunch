@@ -1,0 +1,251 @@
+
+/* ------- FADE IN AND OPEN --------- */
+
+:global(.fadeInAndOpen-enter) {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+:global(.fadeInAndOpen-enter.fadeInAndOpen-enter-active) {
+  max-height: 100em;
+  opacity: 1;
+  transition:
+    max-height 150ms ease-in-out,
+    opacity 150ms 150ms linear;
+}
+
+:global(.fadeInAndOpen-leave) {
+  max-height: 100em;
+  opacity: 1;
+  overflow: hidden;
+}
+
+:global(.fadeInAndOpen-leave.fadeInAndOpen-leave-active) {
+  max-height: 0;
+  opacity: 0;
+  transition:
+    opacity 150ms linear,
+    max-height 150ms 150ms ease-in-out;
+}
+
+/* ------- SLOWLY FADE IN --------- */
+
+:global(.slowlyFadeIn-enter) {
+  opacity: 0;
+  transform: scale3d(.9, .9, .9);
+  overflow: hidden;
+}
+
+:global(.slowlyFadeIn-enter.slowlyFadeIn-enter-active) {
+  opacity: 1;
+  transform: none;
+  transition:
+    transform 1s linear,
+    opacity 1s linear;
+}
+
+/* ------- Pop And Pulse --------- */
+
+:global(.popAndPulse-enter) {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+:global(.popAndPulse-enter.popAndPulse-enter-active) {
+  max-height: 100em;
+  opacity: 1;
+  transition:
+    max-height 150ms ease-in-out,
+    opacity 150ms 150ms linear;
+  animation: scaleUp 0.5s forwards;
+}
+
+:global(.popAndPulse-leave) {
+  max-height: 100em;
+  opacity: 1;
+  overflow: hidden;
+}
+
+:global(.popAndPulse-leave.popAndPulse-leave-active) {
+  max-height: 0;
+  opacity: 0;
+  transition:
+    opacity 150ms linear,
+    max-height 150ms 150ms ease-in-out;
+}
+
+/* ------- SlideUpAndDown --------- */
+
+:global(.slideUpAndDown-enter) {
+  transform: translateY(100%);
+}
+
+:global(.slideUpAndDown-enter-active) {
+  transform: translateY(0%);
+  @mixin snappy-transition transform,  300ms;
+}
+
+:global(.slideUpAndDown-leave) {
+  transform: translateY(0%);
+}
+
+:global(.slideUpAndDown-leave-active) {
+  transform: translateY(100%);
+  @mixin snappy-transition transform,  550ms;
+}
+
+/* ------- SlowlySlideUpAndDown --------- */
+
+:global(.slowlySlideUpAndDown-enter) {
+  transform: translateY(100%);
+}
+
+:global(.slowlySlideUpAndDown-enter-active) {
+  transform: translateY(0%);
+  @mixin snappy-transition transform,  700ms;
+}
+
+:global(.slowlySlideUpAndDown-leave) {
+  transform: translateY(0%);
+}
+
+:global(.slowlySlideUpAndDown-leave-active) {
+  transform: translateY(100%);
+  @mixin snappy-transition transform,  1500ms;
+}
+
+/* ------- SlowlySlideDown --------- */
+
+
+:global(.slowlySlideDown-enter) {
+  transform: translateY(-100%);
+}
+
+:global(.slowlySlideDown-enter-active) {
+  transform: translateY(0%);
+  @mixin snappy-transition transform,  700ms;
+}
+
+/* ------- flyUp --------- */
+
+:global(.flyUp-enter) {
+  opacity: 0;
+  transform: translateY(700%);
+}
+
+:global(.flyUp-enter-active) {
+  opacity: 1;
+  transform: translateY(0%);
+  @mixin snappy-transition-properties transform, opacity, 300ms;
+}
+/*
+:global(.flyUp-leave) {}
+:global(.flyUp-leave-active) {}*/
+
+/* ------- SWIPE LEFT --------- */
+
+/* Important is set here for use with AnimatedHeading.
+   There is a wierd bug where text wrapping resizes when animation is over. */
+
+:global(.swipeLeft-enter) {
+  transform: translate3d(100%,0,0) !important;
+  opacity: 0;
+}
+
+:global(.swipeLeft-enter-active) {
+  transform: translate3d(0,0,0) !important;
+  opacity: 1;
+  @mixin snappy-transition-properties transform, opacity, 300ms;
+}
+
+:global(.swipeLeft-leave) {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+:global(.swipeLeft-leave-active) {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0;
+  @mixin snappy-transition-properties transform, opacity, 300ms;
+}
+
+/* ------- FADE IN AND OUT --------- */
+
+:global(.fadeInAndOut-enter) {
+  opacity: 0;
+}
+
+:global(.fadeInAndOut-enter-active) {
+  opacity: 1;
+  transition:
+    opacity 150ms linear;
+}
+
+:global(.fadeInAndOut-leave) {
+  opacity: 1;
+}
+
+:global(.fadeInAndOut-leave-active) {
+  opacity: 0;
+  transition:
+    opacity 50ms ease-in;
+}
+
+/* ------- POP --------- */
+
+
+:global(.pop-enter) {
+  transform: scale(0.0);
+}
+
+:global(.pop-enter-active) {
+  transform: scale(1.0);
+  animation-timing-function: cubic-bezier(.24,.72,0,1);
+  animation: scaleUpAndDown 0.3s forwards;
+}
+
+/* ------- SLOW POP --------- */
+
+
+:global(.slowPop-enter) {
+  transform: scale(0.0);
+  opacity: 0;
+}
+
+:global(.slowPop-enter-active) {
+  transform: scale(1.0);
+  opacity: 1;
+  animation-timing-function: cubic-bezier(.24,.72,0,1);
+  animation: scaleUpAndDown 1s forwards;
+}
+
+/* ------- REAL ANIMATIONS --------- */
+
+
+@keyframes scaleUp {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  30% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUpAndDown {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  0% {
+    border-radius: 1em;
+    transform: scale(0);
+  }
+  80% {
+    border-radius: 0.25em;
+    transform: scale(1.03);
+  }
+  100% {
+    border-radius: 0.25em;
+    transform: scale(1);
+  }
+}

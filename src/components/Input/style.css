@@ -1,0 +1,30 @@
+@import '../../styles/colors.css';
+@import '../../styles/variables.css';
+
+.root {
+  margin: 0;
+
+  @media (min-width: 456) {
+    margin: 0;
+  }
+
+  &.displayOnly {
+    background: $button-background-gradient;
+    background-color: $standard-button-background-color;
+    box-shadow: $button-shadow;
+    pointer-events:none;
+  }
+
+  &.inactive {
+    color: $light-grey;
+    background-color: $lightest-grey;
+  }
+}
+
+.displayOnly {
+  composes: brandColor__font from global;
+}
+
+.errored:not(.inactive, .displayOnly) {
+  border-color: red;
+}

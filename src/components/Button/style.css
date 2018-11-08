@@ -1,0 +1,374 @@
+@import '../../styles/colors.css';
+@import '../../styles/variables.css';
+
+.base {
+  -webkit-tap-highlight-color: color(white a(0%));
+  appearance: none;
+  position: relative;
+  background: $button-background-gradient;
+  transition: background-color 130ms ease-in-out, color 150ms ease-in-out;
+  font-family: $body-font;
+  letter-spacing: -0.00625em;
+  text-decoration: none;
+  border-radius: $base-border-radius;
+  padding: $button-padding;
+  text-align: center;
+  justify-content: center;
+  font-weight: 300;
+  margin: $base-spacing 0;
+  cursor: pointer;
+  line-height: 1;
+  display: block;
+  outline: none;
+  width: 100%;
+  z-index: $z-index-content;
+
+  &.disabled {
+    pointer-events: none;
+    background-color: $lightest-grey;
+    border: $base-border-width $light-grey $base-border-style;
+    color: $disabled-grey;
+
+    &.selected {
+      background-color: $dark-grey;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: default;
+      background-color: $light-grey;
+      border-color: $light-grey;
+    }
+  }
+}
+
+.noBorder {
+  border: none;
+  background: none;
+  box-shadow: none;
+  line-height: 1.4;
+  padding: 0;
+  &.withIcon {
+    padding: 0;
+  }
+  &.disabled {
+    border: none;
+    background: none;
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:hover {
+    background: none;
+  }
+}
+
+.big {
+  height: 5rem;
+  font-weight: 400;
+
+  &:not(:global(.alignLeft)) {
+    .buttonLabel {
+      font-size: calc($base-spacing * 1.2);
+      line-height: 1.2rem;
+    }
+
+    @media(min-width: $tablet-portrait) {
+      .buttonLabel {
+        line-height: 2.5rem;
+        font-size: calc($base-spacing * 1.5);
+      }
+    }
+
+    &.withIcon {
+      @media(max-width: $tablet-portrait) {
+        .icon {
+          font-size: 1.7rem;
+        }
+        .buttonLabel {
+          padding-left: calc($base-spacing * 0.5);
+        }
+      }
+    }
+  }
+
+
+}
+
+.transparent {
+  background: none;
+  color: white;
+  max-width: 100%;
+  font-size: calc($base-spacing * 1.5);
+  border: $base-border-width white $base-border-style;
+
+  i,
+  .buttonLabel {
+    color: white;
+  }
+
+  &.withIcon {
+    .buttonLabel {
+      padding-left: calc($base-spacing * 2);
+    }
+  }
+
+  &:hover {
+    background: white;
+  }
+
+  &.disabled {
+    background: none;
+    border-color: color(white a(25%));
+    .buttonLabel {
+      color: color(white a(25%));
+    }
+  }
+}
+
+.transparent:hover {
+  i,
+  .buttonLabel {
+    color: inherit;
+  }
+}
+
+.tile {
+  border: $base-border-width white $base-border-style;
+  margin: 0;
+  @media(min-width: $tablet-portrait) {
+    padding-top: calc($base-spacing * 2.125);
+    padding-bottom: calc($base-spacing * 2.125);
+    text-align: center;
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: $dark-blue;
+  }
+
+  composes: brandColor__bg from global;
+  composes: brandColor__bg--hover from global;
+
+  .icon {
+    font-size: 2.5rem;
+  }
+  &.withIcon .buttonLabel {
+    padding-left: calc($base-spacing * 2.5);
+  }
+}
+
+.withIcon {
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+
+  padding: $base-spacing;
+  .buttonLabel {
+    padding-left: $base-spacing;
+    align-self: center;
+  }
+}
+
+.icon {
+  width: calc($base-spacing * 2);
+  font-size: 2em;
+  font-weight: 200;
+
+  align-self: center;
+
+  svg {
+    width: 100%;
+  }
+
+  :global(.primary),
+  :global(.secondary) {
+    stroke: $blue;
+    stroke-width: 5%;
+  }
+}
+
+.smallIcon {
+  .icon {
+    font-size: $small-icon-size;
+  }
+
+  &.withIcon {
+    .buttonLabel {
+      padding-left: calc($base-spacing * 0.5);
+    }
+  }
+}
+
+.bigIcon {
+  .icon {
+    width: calc($base-spacing * 3);
+    font-size: calc($base-spacing * 3);
+  }
+}
+
+.inputButton {
+  border: $base-border-width $form-border-color $base-border-style;
+  background-color: $standard-button-background-color;
+  box-shadow: $button-shadow;
+}
+
+.active {
+  composes: brandColor__font from global;
+  composes: brandColor__font--hover from global;
+  composes: lightBrandColor__bg--hover from global;
+  composes: brandColor__border--hover from global;
+}
+
+.inactive {
+  color: $light-grey;
+}
+
+.selectedActiveInputButton {
+  composes: brandColor__border from global;
+  composes: brandColor__bg from global;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.selectedInactiveInputButton {
+  composes: lightBrandColor__bg from global;
+  composes: lightBrandColor__border from global;
+  color: white;
+}
+
+.linkButton {
+  composes: darkBrandColor__button from global;
+
+  font-weight: 500;
+}
+
+.buttonNext {
+  composes: brandColor__button from global;
+  composes: big;
+
+  border: 0;
+}
+
+.filterToggle {
+  composes: noBorder;
+
+  width: auto;
+  color: $dark-grey;
+  font-weight: $heavy-font-weight;
+
+  &.withIcon {
+    .icon {
+      font-size: 1.2rem;
+    }
+    .buttonLabel {
+      padding-left: 0;
+    }
+  }
+}
+
+.applySection {
+  margin-bottom: 0;
+  .buttonLabel {
+    flex: initial;
+    font-weight: bold;
+  }
+}
+
+.calculatorWidget {
+  composes: brandColor__button from global;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.applyNew {
+  margin-bottom: 0;
+  composes: brandColor__reverseButton from global;
+   .buttonLabel {
+    flex: initial;
+    font-weight: bold;
+  }
+}
+
+.applyButtonPrimary {
+  composes: brandColor__button from global;
+  composes: applySection;
+}
+
+.inbetweenSecondary {
+  composes: noBorder;
+  composes: smallIcon;
+
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.productAction {
+  display: flex;
+  margin: calc($base-spacing * 0.5) 0;
+  height: 3em;
+}
+
+.homepageCrazy {
+  background-color: $semi-transparent-blue;
+  border: $base-border-width solid $semi-transparent-blue;
+  transition: background-color 200ms linear;
+  &:hover {
+    border-color: $semi-transparent-white;
+  }
+
+  composes: brandColor__bg from global;
+  composes: brandColor__bg--hover from global;
+  composes: brandColor__border from global;
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  h1, p {
+    color: white;
+    margin: 0;
+  }
+  padding: $base-spacing;
+  margin: 0 auto;
+  text-align: left;
+
+  @media (max-width: $tablet-portrait) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.homepage {
+  @media (min-width: $tablet-portrait) {
+    width: 50%;
+  }
+  justify-content: flex-start;
+  .buttonLabel span {
+    font-size: 1rem;
+  }
+}
+
+.backButtonTheme {
+  composes: noBorder;
+  composes: alignLeft from global;
+  composes: w-auto from global;
+}
+
+.error {
+  font-size: 80%;
+}

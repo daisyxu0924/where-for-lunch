@@ -1,0 +1,190 @@
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+textarea {
+  &:focus,
+  &:active {
+    border-color: __BRAND_COLOR__;
+  }
+}
+
+  h1, h2, h3, h4 {
+  color: __BRAND_COLOR__;
+}
+
+a {
+  color: __BRAND_COLOR__;
+
+  &:hover {
+    color: __DARK_BRAND_COLOR__;
+  }
+}
+
+.brandColor__font {
+  color: __BRAND_COLOR__;
+}
+
+.brandColor__link {
+  color: __BRAND_COLOR__;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: __DARK_BRAND_COLOR__;
+  }
+}
+
+.brandColor__font--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    color: __BRAND_COLOR__;
+  }
+}
+
+.brandColor__bg {
+  background-color: __BRAND_COLOR__;
+}
+
+.brandColor__bg--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: __DARK_BRAND_COLOR__;
+  }
+}
+
+.brandColor__bg--before:before {
+  background-color: __BRAND_COLOR__;
+}
+
+.brandColor__bg--after:after {
+  background-color: __BRAND_COLOR__;
+}
+
+.brandColor__button {
+  color: white;
+  border: 1px __BRAND_COLOR__ solid;
+  background-color: __BRAND_COLOR__;
+
+  &:hover,
+  &:active {
+    border: 1px __BRAND_COLOR__ solid;
+    background-color: __LIGHT_BRAND_COLOR__;
+    color: __DARK_BRAND_COLOR__;
+  }
+}
+
+.brandColor__reverseButton {
+  border: 1px __BRAND_COLOR__ solid;
+  color: __BRAND_COLOR__;
+  background-color: white;
+
+  &:hover,
+  &:active {
+    color: __DARK_BRAND_COLOR__;
+    background-color: __LIGHT_BRAND_COLOR__;
+  }
+}
+
+.darkBrandColor__button {
+  color: white;
+  border: 1px __DARK_BRAND_COLOR__ solid;
+  background-color: __DARK_BRAND_COLOR__;
+
+  &:hover,
+  &:active {
+    border: 1px __DARK_BRAND_COLOR__ solid;
+    background-color: __LIGHT_BRAND_COLOR__;
+    color: __DARK_BRAND_COLOR__;
+  }
+}
+
+.brandColor__border {
+  border-color: __BRAND_COLOR__;
+}
+
+.lightBrandColor__border {
+  border-color: __LIGHT_BRAND_COLOR__;
+}
+
+.lightBrandColor__border--before:before {
+  border-color: __LIGHT_BRAND_COLOR__;
+}
+
+.darkBrandColor__border {
+  border-color: __DARK_BRAND_COLOR__;
+}
+
+.lightBrandColor__bg {
+  background-color: __LIGHT_BRAND_COLOR__;
+}
+
+.lighterBrandColor__bg {
+  background-color: __LIGHTER_BRAND_COLOR__;
+}
+
+.lightestBrandColor__bg {
+  background-color: __LIGHTEST_BRAND_COLOR__;
+}
+
+.brandColor__border--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: __BRAND_COLOR__;
+  }
+}
+
+.lightBrandColor__bg--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: __LIGHT_BRAND_COLOR__;
+  }
+}
+
+.lighterBrandColor__bg--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: __LIGHTER_BRAND_COLOR__;
+  }
+}
+
+.lightestBrandColor__bg--hover {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: __LIGHTEST_BRAND_COLOR__;
+  }
+}
+
+.brandColor__stroke {
+  stroke: __BRAND_COLOR__;
+}
+
+.brandColor__fill {
+  fill: __BRAND_COLOR__;
+}
+
+.brandColor__bgOverride {
+  background-color: __BRAND_COLOR__ !important;
+}
+.brandColor__percentageDropdownItem li:hover {
+  input, div {
+    border-color: __BRAND_COLOR__;
+    background-color: __LIGHT_BRAND_COLOR__;
+  }
+}

@@ -1,0 +1,36 @@
+html {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: inherit;
+  background: $base-background;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+iframe {
+  width: 1px;
+  min-width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul {
+  -webkit-padding-start: 1em;
+}
+
+:global(#root) {
+  height: inherit;
+}
+
+:global(#root) > div:first-child {
+  height: inherit;
+}

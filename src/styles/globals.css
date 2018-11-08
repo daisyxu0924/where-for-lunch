@@ -1,0 +1,164 @@
+@import './variables.css';
+
+:global(.padding-top-1) {
+  padding-top: $base-spacing !important;
+}
+
+:global(.margin-0) {
+  margin: 0;
+}
+
+:global(.margin-top-0) {
+  margin-top: 0;
+}
+
+:global(.margin-top-05) {
+  margin-top: calc($base-spacing * 0.5);
+}
+
+:global(.margin-top-2) {
+  margin-top: calc($base-spacing * 2);
+}
+
+:global(.margin-bottom-05) {
+  margin-bottom: calc($base-spacing * 0.5);
+}
+
+:global(.flex) {
+  display: flex;
+}
+:global(.row) {
+  flex-direction: row;
+}
+:global(.column) {
+  flex-direction: column;
+}
+:global(.nowrap) {
+  flex-wrap: nowrap;
+}
+:global(.justify-center) {
+  justify-content: center;
+}
+
+:global(.h-3) {
+  height: 3rem;
+}
+
+:global(.h-4) {
+  height: 4rem;
+}
+
+:global(.w80) {
+  width: 80%;
+}
+
+:global(.w-auto) {
+  width: auto;
+}
+
+:global(.hidden) {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+
+:global(.overflowHidden) {
+  overflow: hidden;
+}
+
+:global(.rowContainer) {
+  display: flex;
+  justify-content: space-between;
+  margin: calc($base-spacing * 1.5) 0 $base-spacing 0;
+}
+
+:global(.rowContainerAboveTablet) {
+  padding: calc($base-spacing * 1.5) 0 $base-spacing 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $tablet-portrait) {
+    flex-direction: row;
+  }
+}
+
+:global(.w49AboveTablet) {
+  @media (min-width: $tablet-portrait) {
+    width: 49%;
+  }
+}
+
+:global(.alignCenter) {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+:global(.centerAlignBlock) {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  @media (min-width: $tablet-portrait) {
+    width: 22rem;
+  }
+}
+
+:global(.alignLeft) {
+  justify-content: left;
+  text-align: left;
+}
+
+:global(.floatRight) {
+  float: right;
+}
+
+:global(.sameSizeFlexBoxes) {
+  > div {
+    flex: 1;
+  }
+}
+
+:global(.borderBottom) {
+  border-bottom: black solid $base-border-width;
+}
+
+:global(.circleBorder) {
+  border: $base-border-width solid;
+  border-radius: 2em;
+  padding: calc($base-spacing * 0.25);
+  line-height: 1.5;
+}
+
+
+:global(.whiteSvg) {
+  path {
+    fill: white;
+  }
+}
+
+:global(.uppercase) {
+  text-transform: uppercase;
+}
+
+:global(.small-font) {
+  font-size: $small-font-size;
+}
+
+:global(.nestedRoundCorner) {
+  h5 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    margin-bottom: calc($base-spacing / 2);
+    margin-top: calc($base-spacing * 2);
+  }
+  > div:first-of-type {
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+  }
+  > div:last-of-type {
+    border-bottom-left-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+  }
+}

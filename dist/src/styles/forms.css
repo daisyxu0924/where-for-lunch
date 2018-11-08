@@ -1,0 +1,70 @@
+/* we have duplicate code listing certain input types
+  in brandColor.tpl.css too - this list would rarely changed
+  so we'll just deal with the duplication */
+
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+textarea {
+  box-shadow: inset 0 0.125em 0.125em 0 color(black a(10%));
+  border-radius: $base-border-radius;
+  background-color: $form-background;
+  transition:
+    border-color 200ms,
+    box-shadow 150ms,
+    color 200ms ease,
+    background-color 200ms ease;
+  padding: $form-padding;
+  border: $form-border;
+  line-height: $form-line-height;
+  appearance: none;
+  display: block;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  &::placeholder {
+    transition: opacity 70ms linear;
+    color: $form-placeholder;
+    opacity: 1;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: calc(($form-line-height * 4em) + ($form-padding-y * 2))
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  appearance: none;
+  display: none;
+}

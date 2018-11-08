@@ -1,0 +1,63 @@
+@import './colors.css';
+
+$one-px-as-em: calc(1 / 16 * 1em);
+$one-px-as-rem: calc(1 / 16 * 1rem);
+
+$base-spacing:            1rem;
+$base-margin:             calc($base-spacing * 0.625);
+$base-padding:            calc($base-spacing * 0.625);
+$base-font-size:          1em;
+$base-line-height:        1.383;
+$base-border-width:       0.0625em;
+$base-border-style:       solid;
+$base-border-radius:      0.25em;
+$base-border:             $base-border-width $base-border-color $base-border-style;
+
+$form-border:             $base-border-width $form-border-color $base-border-style;
+$form-padding-x:          0.5em;
+$form-padding-y:          0.625em;
+$form-padding:            $form-padding-y $form-padding-x;
+$form-line-height:        1.8;
+$form-height:             calc(($form-line-height * 1em) + ($form-padding-y * 2));
+
+$button-padding-x:        0.5em;
+$button-padding-y:        1em;
+$button-padding:          $button-padding-y $button-padding-x ;
+
+$mobile:                  20rem;
+$phablet:                 24rem;
+$tablet-portrait:         48rem;
+$tablet-landscape:        64rem;
+$desktop:                 80rem;
+$big-desktop:             90rem;
+
+$heading-font:             'Geomanist', sans-serif;
+$body-font:                'Source Sans Pro', sans-serif;
+$label-transition-time:    200ms;
+$checkbox-transition-time: 10.25s;
+$small-font-size:          0.815em;
+$highlight-font-size:      2rem;
+$smaller-font-size:        var(--smallerFontSize);
+$big-font-size:            1.25em;
+$bigger-font-size:         1.65em;
+$light-font-weight:        100;
+$regular-font-weight:      300;
+$medium-font-weight:       500;
+$heavy-font-weight:        700;
+
+$small-icon-size:          1.5em;
+
+$heading-line-height:      5.5rem;
+$z-index-hide:             -1;
+$z-index-base:             0;
+$z-index-content:          100;
+$z-index-spinner:          200;
+$z-index-popup-overlay:    290;
+$z-index-popups:           300;
+$z-index-inbetweener:      400;
+
+$timing: 500ms;
+$animation-style: ease-in-out;
+
+/* $homepage-image: url("assets/homepage.jpg");
+$shared-login-bg-image: url("assets/family_big.png"); */

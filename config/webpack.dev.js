@@ -1,6 +1,6 @@
 const path = require('path');
 
-const rootPath = path.join(__dirname, '../client');
+const rootPath = path.join(__dirname, '../src');
 
 module.exports = {
   context: rootPath,
@@ -14,7 +14,7 @@ module.exports = {
     modules: [rootPath, 'node_modules'],
   },
   output: {
-    path: path.join(__dirname, '../client'),
+    path: path.join(__dirname, '../src'),
     publicPath: '/',
     filename: 'bundle.js',
     sourceMapFilename: 'map',
@@ -23,7 +23,7 @@ module.exports = {
   devServer: {
     hot: true,
     host: 'localhost',
-    contentBase: path.join(__dirname, '../client'),
+    contentBase: path.join(__dirname, '../src'),
     noInfo: false,
     historyApiFallback: true,
     publicPath: '/',

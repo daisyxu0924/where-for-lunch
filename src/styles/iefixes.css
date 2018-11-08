@@ -1,0 +1,15 @@
+@import './variables.css';
+
+/* fix for IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  :global(.Button__tile) svg {
+    height: 100% !important;
+  }
+  img[src$=".svg"] {
+    width: 100%;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
