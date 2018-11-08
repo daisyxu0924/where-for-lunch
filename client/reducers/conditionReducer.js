@@ -3,6 +3,8 @@ import * as actionTypes from 'actions/conditionActionTypes';
 
 const initialState = {
   radius: 500,
+  latitude: null,
+  longitude: null,
 };
 const conditionReducer = handleActions(
   {
