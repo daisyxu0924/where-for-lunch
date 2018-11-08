@@ -26,10 +26,6 @@ describe('isEmpty', () => {
   test('returns false when pass 0', () => {
     expect(isEmpty(0)).toBe(false);
   });
-
-  test('returns false when pass 0', () => {
-    expect(isEmpty(0)).toBe(false);
-  });
   
   test('returns false when pass double', () => {
     expect(isEmpty(1.2)).toBe(false);
