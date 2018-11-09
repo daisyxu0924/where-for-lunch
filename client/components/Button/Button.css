@@ -1,6 +1,7 @@
 @import '../../styles/variables.css';
 
 .root {
+  margin: 1rem;
   &.homepageClick {
     font-size: 1.6em;
     padding: 0 calc($base-spacing * 2);
@@ -15,6 +16,30 @@
   }
   &.homepageClick:disabled {
     background-color: $starGrey;
+  }
+  &.BusinessPage{
+    font-size: 1.6em;
+    padding: 0 calc($base-spacing * 2);
+    cursor: pointer;
+    background: url('/assets/round-info-button.svg') no-repeat center center;
+    background-color: $green;
+    height: 4rem;
+    border-radius: 4rem;
+    background-size: 60%;
+    margin-left: calc($base-spacing * 2);
+    box-shadow: $button-shadow;   
+  }
+  &.info{
+    background-image: url('/assets/round-info-button.svg');
+  }
+  &.back{
+    background-image: url('/assets/back-arrow.svg');
+  }
+  &.map{
+    background-image: url('/assets/map-placeholder.svg');
+  }
+  &.page{
+    background-image: url('/assets/website-with-different-sections.svg');
   }
 }
 
