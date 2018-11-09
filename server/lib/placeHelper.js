@@ -33,7 +33,7 @@ export function fromPlacesDetailsParams(params) {
   const result = {
     address: params.location.display_address.join(', '),
     categories: params.categories ? params.categories.map(c => c.title) : null,
-    coordinates: params.coordinates,
+    coordinates: {lat: params.coordinates.latitude, lng: params.coordinates.longitude},
     price: params.price,
     phone: params.phone,
     id: params.id,
