@@ -16,3 +16,7 @@ $button-shadow-blur:      0.0625em;
 $button-shadow-spread:    0;
 $button-shadow-color:     rgba(0, 0, 0, 0.1);
 $button-shadow:           $button-shadow-x $button-shadow-y $button-shadow-blur $button-shadow-spread $button-shadow-color;
+
+$form-background-color:   rgba(255,255,255,.2);
+
+
