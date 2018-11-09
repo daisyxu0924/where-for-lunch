@@ -1,0 +1,7 @@
+@import 'styles/variables.css';
+.root {
+  .photo {
+    width: 100%;
+  }
+
+}
