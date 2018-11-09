@@ -12,15 +12,18 @@ import { isEmpty } from '../lib/utils';
 import { toCondtionParams } from '../lib/conditionHelper';
 
 class HomePage extends Component {
-  handleOnClick = () => {
+  handleOnClickFindPlace = () => {
     this.props.fetchPlaces(toCondtionParams(this.props.condition));
   }
+
   handleOnClickDetails = () => {
     this.props.fetchPlacedetails(this.props.place.id || null);
   }
+
   handleOnConditionChange = (value) => {
     this.props.setRadius(value);
   }
+
   handleOnPriceChange = (price, value) => {
     return (value ? this.props.addPrice({ price }) : this.props.removePrice({ price }));
   }
@@ -28,6 +31,7 @@ class HomePage extends Component {
   handleOnFoodChange = (food, value) => {
     return (value ? this.props.addFood({ food }) : this.props.removeFood({ food }));
   }
+
   placeInfo = () => {
     const { place } = this.props;
     if (!place.id) return <h2>Where for lunch?</h2>;
@@ -40,6 +44,7 @@ class HomePage extends Component {
       </div>
     );
   }
+
   render() {
     const { condition } = this.props;
     const findPalceDisabled = isEmpty(condition.latitude);
@@ -54,7 +59,7 @@ class HomePage extends Component {
             condition={condition} />
           <Button
             disabled={findPalceDisabled}
-            onClick={this.handleOnClick}
+            onClick={this.handleOnClickFindPlace}
             title={'Find Place'}
             theme="homepageClick" />
         </div>
