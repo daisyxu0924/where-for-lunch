@@ -1,6 +1,3 @@
-// priceList
-// {alias: '', title: ''},
-
 export default [
   { alias: 1, title: 'P' },
   { alias: 2, title: 'PP' },
