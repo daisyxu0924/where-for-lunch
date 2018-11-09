@@ -6,25 +6,17 @@ import Checkbox from '../Checkbox/Checkbox';
 import priceList from '../../variables/priceList';
 import foodList from '../../variables/foodList';
 
-export default class Condition extends PureComponent {
-  static propTypes = {
-    condition: PropTypes.object,
-    action: PropTypes.func,
-    priceAction: PropTypes.func,
-    foodAction: PropTypes.func,
-  };
-  generateCheckbox = (action, data) => {
-    return <li key={data.alias}><Checkbox title={data.title} onChange={e => action(data.alias, e.target.checked)} /></li>;
-  }
-  priceCheckboxes = (data) => {
-    return this.generateCheckbox(this.props.priceAction, data);
-  }
-  foodCheckboxes = (data) => {
-    return this.generateCheckbox(this.props.foodAction, data);
-  }
-  handleOnBlurAction = (e) => {
-    this.props.action(e.target.value);
-  }
+class Condition extends PureComponent {
+  generateCheckbox = (action, data) => <li key={data.alias}>
+    <Checkbox title={data.title} onChange={e => action(data.alias, e.target.checked)} />
+  </li>;
+
+  priceCheckboxes = data => this.generateCheckbox(this.props.priceAction, data);
+
+  foodCheckboxes = data => this.generateCheckbox(this.props.foodAction, data);
+
+  handleOnBlurAction = e => this.props.action(e.target.value);
+
   render() {
     const { condition: { radius } } = this.props;
     return (
@@ -46,3 +38,12 @@ export default class Condition extends PureComponent {
     );
   }
 }
+
+Condition.propTypes = {
+  condition: PropTypes.object,
+  action: PropTypes.func,
+  priceAction: PropTypes.func,
+  foodAction: PropTypes.func,
+};
+
+export default Condition;
