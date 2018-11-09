@@ -12,8 +12,6 @@ const PlaceInfo = ({ place }) => {
         <div>Types: { place.categories && place.categories.join(', ') }</div>
         <div>Price: { place.price }</div>
         <div>Distance: { place.distance }</div>
-        {/* <div>image_url: { place.img }</div> */}
-        {/* <div>Url: { place.url }</div> */}
       </div>
     </div>
   );
