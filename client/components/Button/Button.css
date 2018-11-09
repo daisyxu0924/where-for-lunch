@@ -14,9 +14,6 @@
     margin-left: calc($base-spacing * 2);
     box-shadow: $button-shadow;
   }
-  &.homepageClick:disabled {
-    background-color: $starGrey;
-  }
   &.BusinessPage{
     font-size: 1.6em;
     padding: 0 calc($base-spacing * 2);
@@ -40,6 +37,9 @@
   }
   &.page{
     background-image: url('/assets/website-with-different-sections.svg');
+  }
+  &:disabled {
+    background-color: $starGrey;
   }
 }
 
