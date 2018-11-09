@@ -6,9 +6,10 @@ export function toSearchPlacesParams(params) {
     radius: params.radius,
     limit: 50,
     open_now: true,
-    categories: params.categories,
-    price: params.price,
   };
+  // must not include field if null
+  if (params.categories) result.categories =  params.categories;
+  if (params.price) result.price =  params.price;
   return result;
 }
 
