@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>streamline-custom</title>
+<style>
+  @font-face {
+    font-family: 'streamline-custom';
+    src: url('../streamline-custom.eot');
+    src: url('../streamline-custom.eot') format('embedded-opentype'), url('../streamline-custom.woff') format('woff'), url('../streamline-custom.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="sl-custom-"]:before, [class*=" sl-custom-"]:before {
+    font-family: 'streamline-custom';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .sl-custom-add-3:before { content: '\e800'; } /* '' */
+  .sl-custom-anchor-point-1:before { content: '\e801'; } /* '' */
+  .sl-custom-arrow-67:before { content: '\e802'; } /* '' */
+  .sl-custom-arrow-68:before { content: '\e803'; } /* '' */
+  .sl-custom-arrow-circle-29:before { content: '\e804'; } /* '' */
+  .sl-custom-arrow-circle-30:before { content: '\e805'; } /* '' */
+  .sl-custom-atm:before { content: '\e806'; } /* '' */
+  .sl-custom-bank-2:before { content: '\e807'; } /* '' */
+  .sl-custom-bed:before { content: '\e808'; } /* '' */
+  .sl-custom-building-2:before { content: '\e809'; } /* '' */
+  .sl-custom-business-chart-2:before { content: '\e80a'; } /* '' */
+  .sl-custom-car-2:before { content: '\e80b'; } /* '' */
+  .sl-custom-cheese:before { content: '\e80c'; } /* '' */
+  .sl-custom-clipboard-3:before { content: '\e80d'; } /* '' */
+  .sl-custom-court:before { content: '\e80e'; } /* '' */
+  .sl-custom-credit-card:before { content: '\e80f'; } /* '' */
+  .sl-custom-cross-1:before { content: '\e810'; } /* '' */
+  .sl-custom-delete-3:before { content: '\e811'; } /* '' */
+  .sl-custom-dollar-bag:before { content: '\e812'; } /* '' */
+  .sl-custom-dollar-currency-3:before { content: '\e813'; } /* '' */
+  .sl-custom-driller:before { content: '\e814'; } /* '' */
+  .sl-custom-edit-2:before { content: '\e815'; } /* '' */
+  .sl-custom-file-favorite-2:before { content: '\e816'; } /* '' */
+  .sl-custom-filter:before { content: '\e817'; } /* '' */
+  .sl-custom-hammer-1:before { content: '\e818'; } /* '' */
+  .sl-custom-hand-coin:before { content: '\e819'; } /* '' */
+  .sl-custom-hand-like-1:before { content: '\e81a'; } /* '' */
+  .sl-custom-house-2:before { content: '\e81b'; } /* '' */
+  .sl-custom-house-4:before { content: '\e81c'; } /* '' */
+  .sl-custom-log-out-1:before { content: '\e81d'; } /* '' */
+  .sl-custom-magnifier:before { content: '\e81e'; } /* '' */
+  .sl-custom-male:before { content: '\e81f'; } /* '' */
+  .sl-custom-marker-1:before { content: '\e820'; } /* '' */
+  .sl-custom-money:before { content: '\e821'; } /* '' */
+  .sl-custom-percent-1:before { content: '\e822'; } /* '' */
+  .sl-custom-pie-chart-1:before { content: '\e823'; } /* '' */
+  .sl-custom-piggy-bank:before { content: '\e824'; } /* '' */
+  .sl-custom-plane-paper-1:before { content: '\e825'; } /* '' */
+  .sl-custom-receipt-4:before { content: '\e826'; } /* '' */
+  .sl-custom-roller:before { content: '\e827'; } /* '' */
+  .sl-custom-script:before { content: '\e828'; } /* '' */
+  .sl-custom-skull-1:before { content: '\e829'; } /* '' */
+  .sl-custom-tag-1:before { content: '\e82a'; } /* '' */
+  .sl-custom-truck-1:before { content: '\e82b'; } /* '' */
+  .sl-custom-user-2:before { content: '\e82c'; } /* '' */
+  .sl-custom-user-setting-2:before { content: '\e82d'; } /* '' */
+  .sl-custom-wallet-3:before { content: '\e82e'; } /* '' */
+  .sl-custom-zoom-in:before { content: '\e82f'; } /* '' */
+  .sl-custom-id-1:before { content: '\e830'; } /* '' */
+  .sl-custom-id-5:before { content: '\e831'; } /* '' */
+  .sl-custom-check:before { content: '\e832'; } /* '' */
+  .sl-custom-coins-1:before { content: '\e833'; } /* '' */
+  .sl-custom-mail-box-3:before { content: '\e834'; } /* '' */
+  .sl-custom-connection-2:before { content: '\e835'; } /* '' */
+  .sl-custom-car-1:before { content: '\e836'; } /* '' */
+  .sl-custom-filled-arrow-circle-29:before { content: '\e837'; } /* '' */
+  .sl-custom-filled-arrow-circle-30:before { content: '\e838'; } /* '' */
+  .sl-custom-chat-1-1:before { content: '\e839'; } /* '' */
+  .sl-custom-star-5:before { content: '\e83a'; } /* '' */
+  .sl-custom-ambulance:before { content: '\e83b'; } /* '' */
+  .sl-custom-question-mark:before { content: '\e83c'; } /* '' */
+  .sl-custom-hand-eco:before { content: '\e83d'; } /* '' */
+  .sl-custom-flag-1:before { content: '\e83e'; } /* '' */
+  .sl-custom-bubble-information-1:before { content: '\e87e'; } /* '' */
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 10pt;
+  }
+</style>
+</head>
+<body>
+<ul>
+<li><input type="checkbox" /> <i class="sl-custom-add-3"></i> sl-custom-add-3</li>
+<li><input type="checkbox" /> <i class="sl-custom-anchor-point-1"></i> sl-custom-anchor-point-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-arrow-67"></i> sl-custom-arrow-67</li>
+<li><input type="checkbox" /> <i class="sl-custom-arrow-68"></i> sl-custom-arrow-68</li>
+<li><input type="checkbox" /> <i class="sl-custom-arrow-circle-29"></i> sl-custom-arrow-circle-29</li>
+<li><input type="checkbox" /> <i class="sl-custom-arrow-circle-30"></i> sl-custom-arrow-circle-30</li>
+<li><input type="checkbox" /> <i class="sl-custom-atm"></i> sl-custom-atm</li>
+<li><input type="checkbox" /> <i class="sl-custom-bank-2"></i> sl-custom-bank-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-bed"></i> sl-custom-bed</li>
+<li><input type="checkbox" /> <i class="sl-custom-building-2"></i> sl-custom-building-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-business-chart-2"></i> sl-custom-business-chart-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-car-2"></i> sl-custom-car-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-cheese"></i> sl-custom-cheese</li>
+<li><input type="checkbox" /> <i class="sl-custom-clipboard-3"></i> sl-custom-clipboard-3</li>
+<li><input type="checkbox" /> <i class="sl-custom-court"></i> sl-custom-court</li>
+<li><input type="checkbox" /> <i class="sl-custom-credit-card"></i> sl-custom-credit-card</li>
+<li><input type="checkbox" /> <i class="sl-custom-cross-1"></i> sl-custom-cross-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-delete-3"></i> sl-custom-delete-3</li>
+<li><input type="checkbox" /> <i class="sl-custom-dollar-bag"></i> sl-custom-dollar-bag</li>
+<li><input type="checkbox" /> <i class="sl-custom-dollar-currency-3"></i> sl-custom-dollar-currency-3</li>
+<li><input type="checkbox" /> <i class="sl-custom-driller"></i> sl-custom-driller</li>
+<li><input type="checkbox" /> <i class="sl-custom-edit-2"></i> sl-custom-edit-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-file-favorite-2"></i> sl-custom-file-favorite-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-filter"></i> sl-custom-filter</li>
+<li><input type="checkbox" /> <i class="sl-custom-hammer-1"></i> sl-custom-hammer-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-hand-coin"></i> sl-custom-hand-coin</li>
+<li><input type="checkbox" /> <i class="sl-custom-hand-like-1"></i> sl-custom-hand-like-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-house-2"></i> sl-custom-house-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-house-4"></i> sl-custom-house-4</li>
+<li><input type="checkbox" /> <i class="sl-custom-log-out-1"></i> sl-custom-log-out-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-magnifier"></i> sl-custom-magnifier</li>
+<li><input type="checkbox" /> <i class="sl-custom-male"></i> sl-custom-male</li>
+<li><input type="checkbox" /> <i class="sl-custom-marker-1"></i> sl-custom-marker-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-money"></i> sl-custom-money</li>
+<li><input type="checkbox" /> <i class="sl-custom-percent-1"></i> sl-custom-percent-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-pie-chart-1"></i> sl-custom-pie-chart-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-piggy-bank"></i> sl-custom-piggy-bank</li>
+<li><input type="checkbox" /> <i class="sl-custom-plane-paper-1"></i> sl-custom-plane-paper-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-receipt-4"></i> sl-custom-receipt-4</li>
+<li><input type="checkbox" /> <i class="sl-custom-roller"></i> sl-custom-roller</li>
+<li><input type="checkbox" /> <i class="sl-custom-script"></i> sl-custom-script</li>
+<li><input type="checkbox" /> <i class="sl-custom-skull-1"></i> sl-custom-skull-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-tag-1"></i> sl-custom-tag-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-truck-1"></i> sl-custom-truck-1</li>
+<li><input type="checkbox" /> <i class="sl-custom-user-2"></i> sl-custom-user-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-user-setting-2"></i> sl-custom-user-setting-2</li>
+<li><input type="checkbox" /> <i class="sl-custom-wallet-3"></i> sl-custom-wallet-3</li>
+<li><input type="checkbox" /> <i class="sl-custom-zoom-in"></i> sl-custom-zoom-in</li>
+<li><input type="checkbox" /> <i class="sl-custom-bubble-information-1"></i> sl-custom-bubble-information-1</li>
+</ul>
+</body>
+</html>

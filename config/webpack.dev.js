@@ -32,6 +32,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(jpe?g|png|gif|eot|ttf|woff2|woff?)$/i,
+        exclude: /banners/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]',
+          },
+        },
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader'],
       },

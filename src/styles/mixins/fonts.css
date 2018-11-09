@@ -1,0 +1,57 @@
+@define-mixin setup-font $familyname, $path, $weightnumber: none, $weightname: none, $stylename: none, $hasttf: no {
+  @font-face {
+    font-family: '$familyname';
+    src: url('../fonts/$path.eot');
+    @if $hasttf == yes {
+      src: url('../fonts/$path.eot?#iefix') format('embedded-opentype'),
+           url('../fonts/$path.woff2') format('woff2'),
+           url('../fonts/$path.woff') format('woff'),
+           url('../fonts/$path.ttf#$path') format('truetype');
+    } @else {
+      src: url('../fonts/$path.eot?#iefix') format('embedded-opentype'),
+           url('../fonts/$path.woff2') format('woff2'),
+           url('../fonts/$path.woff') format('woff');
+    }
+    @if $weightname != none {
+      font-weight: $weightname;
+    }
+    @if $weightnumber != none {
+      font-weight: $weightnumber;
+    }
+    @if $stylename != none {
+      font-style: $stylename;
+    }
+  }
+}
+
+@define-mixin setup-icon-font $familyname {
+  @mixin setup-font $familyname, $familyname/$familyname, none, normal, normal, yes;
+}
+
+@define-mixin icon-font-properties $familyname {
+  font-family: '$familyname';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  /* For safety - reset parent .., that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

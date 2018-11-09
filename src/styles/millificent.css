@@ -1,0 +1,29 @@
+@mixin setup-icon-font millificent;
+
+:global {
+  [class^="mi-"]:before, [class*=" mi-"]:before {
+    @mixin icon-font-properties millificent;
+  }
+
+  .mi-user-unisex:before { content: '\e800'; } /* '' */
+  .mi-check-with-circle:before { content: '\e801'; } /* '' */
+  .mi-cross-with-circle:before { content: '\e802'; } /* '' */
+  .mi-question-with-circle:before { content: '\e803'; } /* '' */
+  .mi-phone:before { content: '\e804'; } /* '' */
+  .mi-arrow-with-circle-up:before { content: '\e805'; } /* '' */
+  .mi-arrow-with-circle-down:before { content: '\e806'; } /* '' */
+  .mi-arrow-with-circle-left:before { content: '\e807'; } /* '' */
+  .mi-arrow-with-circle-right:before { content: '\e808'; } /* '' */
+  .mi-arrow-up:before { content: '\e809'; } /* '' */
+  .mi-arrow-down:before { content: '\e80a'; } /* '' */
+  .mi-arrow-left:before { content: '\e80b'; } /* '' */
+  .mi-arrow-right:before { content: '\e80c'; } /* '' */
+  .mi-arrow-filled-up:before { content: '\e80d'; } /* '' */
+  .mi-arrow-filled-down:before { content: '\e80e'; } /* '' */
+  .mi-arrow-filled-left:before { content: '\e80f'; } /* '' */
+  .mi-arrow-filled-right:before { content: '\e810'; } /* '' */
+  .mi-check:before { content: '\e811'; } /* '' */
+  .mi-cross:before { content: '\e812'; } /* '' */
+  .mi-question:before { content: '\e813'; } /* '' */
+  .mi-menu:before { content: '\f0c9'; } /* '' */
+}

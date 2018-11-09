@@ -1,0 +1,11 @@
+@define-mixin snappy-transition $property, $duration {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: cubic-bezier(.24,.72,0,1);
+}
+
+@define-mixin snappy-transition-properties $property-1, $property-2, $duration {
+  transition-property: $property-1, $property-2;
+  transition-duration: $duration;
+  transition-timing-function: cubic-bezier(.24,.72,0,1);
+}

@@ -1,8 +1,10 @@
 {
     "env": {
-        "compiler": "bit.envs/bundlers/webpack-css-modules@0.0.8"
+        "compiler": "loanmarket.shared/bundlers/webpack-css-modules@0.0.15"
     },
-    "dependencies": {},
+    "dependencies": {
+        "loanmarket.shared/bundlers/webpack-css-modules": "0.0.15"
+    },
     "componentsDefaultDirectory": "components/{namespace}/{name}",
     "packageManager": "npm"
 }

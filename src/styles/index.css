@@ -2,7 +2,11 @@
 @import './colors.css';
 @import './variables.css';
 @import './animations.css';
+@import './fonts.css';
+/*@import './streamline-outline.css';*/
+@import './streamline-custom.css';
+@import './millificent.css';
+@import './typography.css';
 @import './reset.css';
 @import './forms.css';
 @import './iefixes.css';
-@import './typography.css';

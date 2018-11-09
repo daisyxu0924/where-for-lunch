@@ -11,13 +11,23 @@ import Input from './components/input';
  * <App />
  */
 class App extends Component {
+  goBack = () => {
+
+  }
   render() {
     return (
       <div>
         Button:
-        <Button />
+        <Button
+          id="backButton"
+          icon="mi-arrow-left"
+          theme="backButtonTheme"
+          onClick={this.goBack}
+        >
+          Click me
+        </Button>
         Input:
-        <Input />
+        <Input displayOnly />
       </div>
     );
   }

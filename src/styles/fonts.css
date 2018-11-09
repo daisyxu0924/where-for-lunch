@@ -1,0 +1,16 @@
+@mixin setup-font Geomanist,      Geomanist/Geomanist-Light,   100, none, normal;
+@mixin setup-font Geomanist,      Geomanist/Geomanist-Regular, 300, none, normal;
+@mixin setup-font Geomanist Book, Geomanist/Geomanist-Book,    500, none, normal;
+@mixin setup-font Geomanist,      Geomanist/Geomanist-Medium,  700, none, normal;
+@mixin setup-font Geomanist,      Geomanist/Geomanist-Bold,    900, none, normal;
+
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-Light,      100, lighter, normal;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-LightIt,    100, lighter, italic;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-Regular,    300, normal,  normal;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-It,         300, normal,  italic;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-Semibold,   500, none,    normal;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-SemiboldIt, 500, none,    italic;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-Bold,       700, bold,    normal;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-BoldIt,     700, bold,    italic;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-Black,      900, bolder,  normal;
+@mixin setup-font Source Sans Pro, SourceSansPro/SourceSansPro-BlackIt,    900, bolder,  italic;
