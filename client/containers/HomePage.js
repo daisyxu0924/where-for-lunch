@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
 import placeActions from 'actions/placeActions';
 import conditionActions from 'actions/conditionActions';
@@ -14,11 +15,12 @@ class HomePage extends Component {
   handleOnClick = () => {
     this.props.fetchPlaces(toCondtionParams(this.props.condition));
   }
-
+  handleOnClickDetails = () => {
+    this.props.fetchPlacedetails(this.props.place.id || null);
+  }
   handleOnConditionChange = (value) => {
     this.props.setRadius(value);
   }
-
   handleOnPriceChange = (price, value) => {
     return (value ? this.props.addPrice({ price }) : this.props.removePrice({ price }));
   }
@@ -26,13 +28,24 @@ class HomePage extends Component {
   handleOnFoodChange = (food, value) => {
     return (value ? this.props.addFood({ food }) : this.props.removeFood({ food }));
   }
-
+  placeInfo = () => {
+    const { place } = this.props;
+    if (!place.id) return <h2>Where for lunch?</h2>;
+    return (
+      <div>
+        <Place place={place} />
+        <Link to={`detail/${place.id}`}>
+          <Button onClick={this.handleOnClickDetails} theme="homepageClick" icon={'info'} title='show details' />
+        </Link>
+      </div>
+    );
+  }
   render() {
-    const { condition, place } = this.props;
+    const { condition } = this.props;
     const findPalceDisabled = isEmpty(condition.latitude);
     return (
       <div className="homePageWrapper">
-        <Place place={place} />
+        { this.placeInfo() }
         <div className="searchWrapper">
           <Condition
             action={this.handleOnConditionChange}
@@ -42,6 +55,7 @@ class HomePage extends Component {
           <Button
             disabled={findPalceDisabled}
             onClick={this.handleOnClick}
+            title={'Find Place'}
             theme="homepageClick" />
         </div>
       </div>
@@ -57,6 +71,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
     fetchPlaces: placeActions.fetchPlaces,
+    fetchPlacedetails: placeActions.fetchPlacedetails,
     setRadius: conditionActions.setRadius,
     addPrice: conditionActions.addPrice,
     removePrice: conditionActions.removePrice,
@@ -68,6 +83,7 @@ HomePage.propTypes = {
   condition: PropTypes.object,
   place: PropTypes.object,
   fetchPlaces: PropTypes.func,
+  fetchPlacedetails: PropTypes.func,
   setRadius: PropTypes.func,
   addPrice: PropTypes.func,
   removePrice: PropTypes.func,
