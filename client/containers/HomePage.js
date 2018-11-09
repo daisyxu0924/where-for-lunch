@@ -12,45 +12,35 @@ import { isEmpty } from '../lib/utils';
 import { toCondtionParams } from '../lib/conditionHelper';
 
 class HomePage extends Component {
-  handleOnClickFindPlace = () => {
-    this.props.fetchPlaces(toCondtionParams(this.props.condition));
-  }
+  handleOnClickFindPlace = () => this.props.fetchPlaces(toCondtionParams(this.props.condition));
 
-  handleOnClickDetails = () => {
-    this.props.fetchPlacedetails(this.props.place.id || null);
-  }
+  handleOnClickDetails = () => this.props.fetchPlacedetails(this.props.place.id || null);
 
-  handleOnConditionChange = (value) => {
-    this.props.setRadius(value);
-  }
+  handleOnConditionChange = value => this.props.setRadius(value);
 
-  handleOnPriceChange = (price, value) => {
-    return (value ? this.props.addPrice({ price }) : this.props.removePrice({ price }));
-  }
+  handleOnPriceChange = (price, value) => (value ? this.props.addPrice({ price }) : this.props.removePrice({ price }));
 
-  handleOnFoodChange = (food, value) => {
-    return (value ? this.props.addFood({ food }) : this.props.removeFood({ food }));
-  }
+  handleOnFoodChange = (food, value) => (value ? this.props.addFood({ food }) : this.props.removeFood({ food }));
 
-  placeInfo = () => {
-    const { place } = this.props;
-    if (!place.id) return <h2>Where for lunch?</h2>;
-    return (
-      <div>
-        <Place place={place} />
-        <Link to={`detail/${place.id}`}>
-          <Button onClick={this.handleOnClickDetails} theme="homepageClick" icon={'info'} title='show details' />
-        </Link>
-      </div>
-    );
-  }
+  placeInfo = place => (place.id ?
+    <div>
+      <Place place={place} />
+      <Link to={`detail/${place.id}`}>
+        <Button
+          icon={'info'}
+          onClick={this.handleOnClickDetails}
+          theme="homepageClick"
+          title='show details' />
+      </Link>
+    </div> : <h2>Where for lunch?</h2>
+  );
 
   render() {
-    const { condition } = this.props;
+    const { condition, place } = this.props;
     const findPalceDisabled = isEmpty(condition.latitude);
     return (
       <div className="homePageWrapper">
-        { this.placeInfo() }
+        { this.placeInfo(place) }
         <div className="searchWrapper">
           <Condition
             action={this.handleOnConditionChange}
