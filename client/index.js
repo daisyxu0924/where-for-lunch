@@ -12,6 +12,7 @@ import App from 'containers/App';
 import HomePage from 'containers/HomePage';
 import { fetchLatLng } from 'lib/navigatorHelper';
 import 'index.css';
+import BusinessPage from './containers/BusinessPage';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -31,6 +32,7 @@ render(
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={ HomePage } />
+          <Route path="/detail/:id" exact component={ BusinessPage } />
         </Switch>
       </Router>
     </App>
