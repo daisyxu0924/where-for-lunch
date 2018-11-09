@@ -1,0 +1,8 @@
+@import '../../styles/variables.css';
+
+.root {
+  height: 400px;
+  width: 100%;
+  position: relative;
+
+}

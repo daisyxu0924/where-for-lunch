@@ -1,0 +1,10 @@
+@import '../../styles/variables.css';
+
+.root {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  position: relative;
+  z-index: 9999;
+  border-radius: 6px;
+}
