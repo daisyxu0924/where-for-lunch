@@ -12,3 +12,9 @@ export function fetchLatLng(store) {
     console.log('give it to me! ', err);
   });
 }
+
+
+export function newWindow(link) {
+  const win = window.open(link, '_blank');
+  win.focus();
+}
