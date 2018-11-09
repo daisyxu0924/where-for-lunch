@@ -1,6 +1,3 @@
-// foodCategories
-// {alias: '', title: ''},
-
 export default [
   { alias: 'coffee', title: 'Coffee & Tea Shops' },
   { alias: 'convenience', title: 'Convenience Stores / Milk Bars' },
