@@ -3,12 +3,13 @@ import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';
 import styles from './GoogleMap.css';
 import Marker from '../Marker/Marker';
+import { GOOGLE_MAP_API } from '../../constants/apiKeys';
 
 const GoogleMap = ({ coordinates, zoom }) => (
   <div className={styles.root}>
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: 'AIzaSyCYDM_gyqp1UGVClhh05ek_4G0zr4n55xA', // my testing api key
+        key: GOOGLE_MAP_API, // my testing api key
       }}
       defaultCenter={coordinates}
       defaultZoom={ zoom }>
@@ -16,7 +17,6 @@ const GoogleMap = ({ coordinates, zoom }) => (
     </GoogleMapReact>
   </div>
 );
-
 
 GoogleMap.propTypes = {
   coordinates: PropTypes.object,
