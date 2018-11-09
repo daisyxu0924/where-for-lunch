@@ -4,7 +4,7 @@ import styles from './Checkbox.css';
 
 const Checkbox = ({ value, onChange, title }) => (
   <div className={styles.root}>
-    <input type='checkbox' value={value} onChange={onChange} ></input>
+    <input type='checkbox' value={value} onChange={onChange} />
     <span>{title}</span>
   </div>
 );
@@ -14,6 +14,5 @@ Checkbox.propTypes = {
   onChange: PropTypes.func,
   title: PropTypes.string,
 };
-
 
 export default Checkbox;
