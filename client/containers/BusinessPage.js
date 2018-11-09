@@ -8,10 +8,16 @@ import placeActions from 'actions/placeActions';
 import Place from 'components/Place/Place';
 import Photo from '../components/Photo/Photo';
 import PlaceInfo from '../components/PlaceInfo/PlaceInfo';
+import { isEmpty } from '../lib/utils';
 import { newWindow } from '../lib/navigatorHelper';
+import GoogleMap from '../components/GoogleMap/GoogleMap';
 
 class BusinessPage extends Component {
+  state = {
+    showMap: false,
+  }
   handleOnClickShowMap = () => {
+    this.setState({ showMap: true });
   }
   handleOnClickGotoLink = () => {
     newWindow(this.props.place.url);
@@ -25,6 +31,7 @@ class BusinessPage extends Component {
   }
   render() {
     const { place } = this.props;
+    const gmapCoordinate = isEmpty(place.coordinates ? place.coordinates.lat : null);
     return (
       <div className="homePageWrapper">
         <Place place={place} />
@@ -32,7 +39,8 @@ class BusinessPage extends Component {
           <Button onClick={this.handleOnClickBack} theme="BusinessPage" icon={'back'} title='Back' />
         </Link>
         <Button onClick={this.handleOnClickGotoLink} theme="BusinessPage" icon={'page'} title='Visit Website' />
-        <Button onClick={this.handleOnClickShowMap} theme="BusinessPage" icon={'map'} title='Show Map' />
+        <Button onClick={this.handleOnClickShowMap} theme="BusinessPage" icon={'map'} title='Show Map' disabled={gmapCoordinate} />
+        {this.state.showMap ? <GoogleMap coordinates={place.coordinates}/> : null }
         <PlaceInfo place={place} />
         <Photo place={place} />
       </div>
