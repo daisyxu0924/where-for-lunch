@@ -20,21 +20,21 @@ const conditionReducer = handleActions(
     },
     // prices
     [actionTypes.ADD_PRICE](state, action) {
-      const { price } = action.payload;
-      return { ...state, prices: [...state.prices, price] };
+      const { value } = action.payload;
+      return { ...state, prices: [...state.prices, value] };
     },
     [actionTypes.REMOVE_PRICE](state, action) {
-      const { price } = action.payload;
-      return { ...state, prices: [...state.prices.filter(p => p !== price)] };
+      const { value } = action.payload;
+      return { ...state, prices: [...state.prices.filter(p => p !== value)] };
     },
     // foods
     [actionTypes.ADD_FOOD](state, action) {
-      const { food } = action.payload;
-      return { ...state, foods: [...state.foods, food] };
+      const { value } = action.payload;
+      return { ...state, foods: [...state.foods, value] };
     },
     [actionTypes.REMOVE_FOOD](state, action) {
-      const { food } = action.payload;
-      return { ...state, foods: [...state.foods.filter(f => f !== food)] };
+      const { value } = action.payload;
+      return { ...state, foods: [...state.foods.filter(f => f !== value)] };
     },
   },
   initialState,
