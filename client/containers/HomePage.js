@@ -7,33 +7,32 @@ import Button from 'components/Button/Button';
 import placeActions from 'actions/placeActions';
 import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
-import Condition from 'components/Condition/Condition';
+import { ConditionRedux } from 'components/Condition/Condition';
 import { isEmpty } from '../lib/utils';
 import { toCondtionParams } from '../lib/conditionHelper';
+import Messages from '../components/Messages/Messages';
 
 class HomePage extends Component {
   handleOnClickFindPlace = () => this.props.fetchPlaces(toCondtionParams(this.props.condition));
 
   handleOnClickDetails = () => this.props.fetchPlacedetails(this.props.place.id || null);
 
-  handleOnConditionChange = value => this.props.setRadius(value);
+  placeInfo = (place) => {
+    if (place.error) return <Messages message={ place.error } />;
 
-  handleOnPriceChange = (price, value) => (value ? this.props.addPrice({ price }) : this.props.removePrice({ price }));
-
-  handleOnFoodChange = (food, value) => (value ? this.props.addFood({ food }) : this.props.removeFood({ food }));
-
-  placeInfo = place => (place.id ?
-    <div>
-      <Place place={place} />
-      <Link to={`detail/${place.id}`}>
-        <Button
-          icon={'info'}
-          onClick={this.handleOnClickDetails}
-          theme="homepageClick"
-          title='show details' />
-      </Link>
-    </div> : <h2>Where for lunch?</h2>
-  );
+    return (place.id ?
+      <div>
+        <Place place={place} />
+        <Link to={`detail/${place.id}`}>
+          <Button
+            icon={'info'}
+            onClick={this.handleOnClickDetails}
+            theme="homepageClick"
+            title='show details' />
+        </Link>
+      </div> : <h2>Where for lunch?</h2>
+    );
+  }
 
   render() {
     const { condition, place } = this.props;
@@ -42,11 +41,7 @@ class HomePage extends Component {
       <div className="homePageWrapper">
         { this.placeInfo(place) }
         <div className="searchWrapper">
-          <Condition
-            action={this.handleOnConditionChange}
-            priceAction={this.handleOnPriceChange}
-            foodAction={this.handleOnFoodChange}
-            condition={condition} />
+          <ConditionRedux />
           <Button
             disabled={findPalceDisabled}
             onClick={this.handleOnClickFindPlace}
