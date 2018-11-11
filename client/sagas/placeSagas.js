@@ -12,7 +12,7 @@ function* fetchPlace(action) {
     const randomPlace = getRandom(places);
     yield put(placeActions.setDetails(randomPlace));
   } catch (e) {
-    console.log('error! ', e);
+    yield put(placeActions.setError('No result found!'));
   }
 }
 
