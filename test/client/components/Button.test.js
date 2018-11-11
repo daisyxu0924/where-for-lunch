@@ -6,20 +6,6 @@ import Button from 'client/components/Button/Button';
 describe('Button', () => {
   const theme = 'homepageClick';
 
-  test('must have disabled class when disabled is true', () => {
-    const dom = mount( <Button theme={theme} disabled = {true} /> )
-    const button = dom.childAt(0)
-    expect( button.hasClass( theme + 'Disabled' ) )
-    .toBe( true );
-  });
-
-  test('must dont have disabled class when disabled is false', () => {
-    const dom = mount( <Button theme={theme} disabled = {false} /> )
-    const button = dom.childAt(0)
-    expect( button.hasClass( theme + 'Disabled' ) )
-    .toBe( false );
-  });
-
   test('must dont have disabled attribute when disabled is false', () => {
     const dom = mount( <Button theme={theme} disabled = {false} /> )
     const button = dom.childAt(0)
