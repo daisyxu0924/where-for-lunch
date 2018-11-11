@@ -1,0 +1,8 @@
+.root {
+  > span, > div {
+    display: inline;
+  }
+  ul {
+    list-style: none;
+  }
+}
