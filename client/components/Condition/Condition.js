@@ -1,37 +1,34 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import conditionActions from 'actions/conditionActions';
 import Input from 'components/Input/Input';
 import styles from './Condition.css';
-import Checkbox from '../Checkbox/Checkbox';
+import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import priceList from '../../variables/priceList';
 import foodList from '../../variables/foodList';
 
 class Condition extends PureComponent {
-  generateCheckbox = (action, data) => <li key={data.alias}>
-    <Checkbox title={data.title} onChange={e => action(data.alias, e.target.checked)} />
-  </li>;
-
-  priceCheckboxes = data => this.generateCheckbox(this.props.priceAction, data);
-
-  foodCheckboxes = data => this.generateCheckbox(this.props.foodAction, data);
-
-  handleOnBlurAction = e => this.props.action(e.target.value);
-
   render() {
-    const { condition: { radius } } = this.props;
+    const { condition: { radius, prices, foods }, setRadius, addFood, addPrice, removeFood, removePrice } = this.props;
     return (
       <div className={styles.root}>
-        <span>FOODS:</span>
-        <ul >
-          { foodList.map(food => this.foodCheckboxes(food)) }
-        </ul>
-        <span>PRICES:</span>
-        <ul>
-          { priceList.map(price => this.priceCheckboxes(price)) }
-        </ul>
+        <CheckboxGroup
+          title={'Foods'}
+          data={{ dataSet: foodList, selected: foods }}
+          add={addFood}
+          remove={removeFood}
+        />
+        <CheckboxGroup
+          title={'Prices'}
+          data={{ dataSet: priceList, selected: prices }}
+          add={addPrice}
+          remove={removePrice}
+        />
         <div>
           <span>radius:</span>
-          <Input defaultValue={radius} onBlurAction={this.handleOnBlurAction}></Input>
+          <Input defaultValue={radius} onBlurAction={setRadius}></Input>
           <span>meters</span>
         </div>
       </div>
@@ -41,9 +38,31 @@ class Condition extends PureComponent {
 
 Condition.propTypes = {
   condition: PropTypes.object,
-  action: PropTypes.func,
-  priceAction: PropTypes.func,
-  foodAction: PropTypes.func,
+  setRadius: PropTypes.func,
+  addPrice: PropTypes.func,
+  removePrice: PropTypes.func,
+  addFood: PropTypes.func,
+  removeFood: PropTypes.func,
 };
 
+const mapStateToProps = state => ({
+  condition: state.condition,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    setRadius: conditionActions.setRadius,
+    addPrice: conditionActions.addPrice,
+    removePrice: conditionActions.removePrice,
+    addFood: conditionActions.addFood,
+    removeFood: conditionActions.removeFood,
+  }, dispatch);
+
+// for test
 export default Condition;
+
+// for component use
+export const ConditionRedux = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Condition);
