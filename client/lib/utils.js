@@ -3,3 +3,7 @@ export function getRandom(list) {
   const rand = list[Math.floor(Math.random() * list.length)];
   return rand;
 }
+// fnc that check coordinate
+export function hasCoordinate(lat, long) {
+  return !!(lat && long);
+}
