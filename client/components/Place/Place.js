@@ -5,7 +5,10 @@ import styles from './Place.css';
 const Place = ({ place }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.name}>{ place.name || 'Where for lunch?' }</div>
+      <div className={styles.name}
+        style={ { backgroundImage: `url("${place.img}")` } }>
+        { place.name || 'Where for lunch?' }
+      </div>
       <div className={styles.box}>
         <div>{ place.address }</div>
         <div>{ place.phone }</div>
