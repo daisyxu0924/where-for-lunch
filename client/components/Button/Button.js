@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Button.css';
 
-const Button = ({ onClick, children, icon, ...attributes }) => {
+const Button = ({ children, icon, ...attributes }) => {
   return (
     <button
       className={classNames({
