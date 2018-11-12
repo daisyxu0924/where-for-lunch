@@ -7,9 +7,10 @@ import placeActions from 'actions/placeActions';
 import conditionActions from 'actions/conditionActions';
 import Place from 'components/Place/Place';
 import Condition from 'components/Condition/Condition';
+import { hasCoordinate } from '../lib/utils';
 
 class HomePage extends Component {
-  handleOnClick = () => {
+  handleOnClickFindPlace = () => {
     this.props.fetchPlaces(this.props.condition);
   }
 
@@ -18,12 +19,17 @@ class HomePage extends Component {
   }
   render() {
     const { condition, place } = this.props;
+    const findPalceDisabled = !hasCoordinate(condition.latitude, condition.longitude);
     return (
       <div className="homePageWrapper">
         <Place place={place} />
         <div className="searchWrapper">
           <Condition condition={condition} action={this.handleOnConditionChange}/>
-          <Button onClick={this.handleOnClick} theme="homepageClick" />
+          <Button
+            disabled={findPalceDisabled}
+            icon={'foodPlace'}
+            onClick={this.handleOnClickFindPlace}
+            title={'Find Place'} />
         </div>
       </div>
     );
@@ -47,6 +53,7 @@ HomePage.propTypes = {
   fetchPlaces: PropTypes.func,
   setRadius: PropTypes.func,
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
