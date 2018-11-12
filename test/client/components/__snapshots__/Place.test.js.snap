@@ -6,7 +6,14 @@ exports[`With Jest snapshot, Place component renders rating section when present
 >
   <div
     className="name"
-  />
+    style={
+      Object {
+        "backgroundImage": "url(\\"undefined\\")",
+      }
+    }
+  >
+    Where for lunch?
+  </div>
   <div
     className="box"
   >
