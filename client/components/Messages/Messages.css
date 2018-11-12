@@ -1,0 +1,11 @@
+@import '../../styles/variables.css';
+
+.root {
+  padding: $base-spacing;
+  font-size: 20px;
+  &.error{
+    background-color: $error;
+  }
+}
+
+
