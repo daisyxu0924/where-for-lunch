@@ -1,5 +1,7 @@
+import { isArray } from "util";
+
 export function toSearchPlacesParams(params) {
-  const result = {
+  let result = {
     term: 'food',
     latitude: params.latitude,
     longitude: params.longitude,
@@ -7,8 +9,10 @@ export function toSearchPlacesParams(params) {
     limit: 50,
     open_now: true,
   };
+  // must not include fields if null
+  if (isArray(params.foods) && params.foods.length > 0) result.categories =  params.foods.join(', ');
   return result;
-}
+} 
 
 export function fromSearchPlacesParams(params) {
   const result = {

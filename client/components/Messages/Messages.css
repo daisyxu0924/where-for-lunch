@@ -2,11 +2,10 @@
 
 .root {
   padding: $base-spacing;
-  > span, > div {
-    display: inline;
+  font-size: 20px;
+  &.error{
+    background-color: $error;
   }
-  > ul { 
-    list-style: none;
-  }
-
 }
+
+

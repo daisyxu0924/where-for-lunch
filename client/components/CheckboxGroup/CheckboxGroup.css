@@ -1,12 +1,8 @@
-@import '../../styles/variables.css';
-
 .root {
-  padding: $base-spacing;
   > span, > div {
     display: inline;
   }
-  > ul { 
+  ul {
     list-style: none;
   }
-
 }

@@ -8,10 +8,12 @@ import {
 
 function* fetchPlace(action) {
   try {
+    yield put(placeActions.setLoading(true));
     const places = yield call(getPlaceIds, action.payload);
     const randomPlace = getRandom(places);
     yield put(placeActions.setDetails(randomPlace));
   } catch (e) {
+    yield put(placeActions.setError('No found Result!'));
     console.log('error! ', e);
   }
 }
